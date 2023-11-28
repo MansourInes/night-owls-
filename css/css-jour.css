@@ -1,0 +1,136 @@
+body {
+    background-color: #f8f8f8; /* Couleur de fond légère */
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif; /* Choisissez une police de caractères appropriée */
+}
+/* Style pour le H1 centré */
+h1 {
+    text-align: center;
+    margin-top: 20px; /* Ajoutez une marge supérieure si nécessaire */
+}
+
+/* Styles pour la barre de navigation */
+.navbar {
+    background-color: #001f3f; /* Bleu nuit */
+    color: white;
+    padding: 10px 20px; /* Ajout de rembourrage pour un meilleur espacement */
+}
+
+/* Styles pour le pied de page */
+footer {
+    background-color: #001f3f; /* Bleu nuit */
+    color: white;
+    padding: 20px; /* Augmentation du rembourrage pour un look plus équilibré */
+    text-align: center;
+}
+
+/* Style général pour le header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #001f3f; /* Bleu nuit */
+    color: white;
+    padding: 15px;
+}
+
+/* Style pour le logo */
+header a img.logo {
+    width: 150px; /* Ajustez la largeur selon vos besoins */
+    height: auto;
+}
+
+/* Style pour la barre de navigation */
+#header-nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Permet à la barre de navigation de prendre tout l'espace disponible */
+}
+
+.a-header {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    margin-right: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.a-header:hover {
+    background-color: #004080; /* Changement de couleur au survol */
+}
+
+/* Style pour le bouton de connexion */
+.connexion-button {
+    background-color: #004080;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.connexion-button:hover {
+    background-color: #001f3f; /* Changement de couleur au survol */
+}
+
+/* Style pour la barre de recherche */
+.search-form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.search-form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 300px;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    background-color: #004080;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #001f3f;
+}
+/* Style pour le calendrier */
+.calendar {
+    position: absolute;
+    top: 150px; /* Ajustez la position verticale selon vos besoins */
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(7, calc((200px - 6 * 5px) / 7)); /* Ajustez la largeur selon vos besoins */
+    gap: 5px;
+    width: 200px; /* Ajustez la largeur selon vos besoins */
+}
+
+.calendar-day {
+    width: calc((200px - 6 * 5px) / 7);
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap; /* Empêche le texte de se couper */
+    overflow: hidden; /* Masque le débordement du contenu */
+}
+
+.today {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
