@@ -1,26 +1,29 @@
 body {
-    background-color: #f8f8f8; /* Couleur de fond légère */
+    background-color: #f8f8f8;
     margin: 0;
-    font-family: 'Helvetica Neue', sans-serif; /* Choisissez une police de caractères appropriée */
+    font-family: 'Helvetica Neue', sans-serif;
 }
-/* Style pour le H1 centré */
+main{
+    margin: 30px;
+}
 h1 {
-    text-align: center;
-    margin-top: 20px; /* Ajoutez une marge supérieure si nécessaire */
+    text-align: left;
+    margin-top: 50px;
+
 }
 
 /* Styles pour la barre de navigation */
 .navbar {
-    background-color: #001f3f; /* Bleu nuit */
+    background-color: #001f3f;
     color: white;
-    padding: 10px 20px; /* Ajout de rembourrage pour un meilleur espacement */
+    padding: 10px 20px;
 }
 
 /* Styles pour le pied de page */
 footer {
-    background-color: #001f3f; /* Bleu nuit */
+    background-color: #001f3f;
     color: white;
-    padding: 20px; /* Augmentation du rembourrage pour un look plus équilibré */
+    padding: 20px;
     text-align: center;
 }
 
@@ -29,14 +32,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #001f3f; /* Bleu nuit */
+    background-color: #001f3f;
     color: white;
     padding: 15px;
 }
 
 /* Style pour le logo */
 header a img.logo {
-    width: 150px; /* Ajustez la largeur selon vos besoins */
+    width: 150px;
     height: auto;
 }
 
@@ -44,7 +47,7 @@ header a img.logo {
 #header-nav {
     display: flex;
     align-items: center;
-    flex-grow: 1; /* Permet à la barre de navigation de prendre tout l'espace disponible */
+    flex-grow: 1;
 }
 
 .a-header {
@@ -57,7 +60,7 @@ header a img.logo {
 }
 
 .a-header:hover {
-    background-color: #004080; /* Changement de couleur au survol */
+    background-color: #004080;
 }
 
 /* Style pour le bouton de connexion */
@@ -72,7 +75,7 @@ header a img.logo {
 }
 
 .connexion-button:hover {
-    background-color: #001f3f; /* Changement de couleur au survol */
+    background-color: #001f3f;
 }
 
 /* Style pour la barre de recherche */
@@ -100,10 +103,11 @@ header a img.logo {
 .search-form button:hover {
     background-color: #001f3f;
 }
+
 /* Style pour le calendrier */
 .calendar {
     position: absolute;
-    top: 150px; /* Ajustez la position verticale selon vos besoins */
+    top: 150px;
     right: 20px;
     background-color: #fff;
     border: 1px solid #ccc;
@@ -112,9 +116,9 @@ header a img.logo {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(7, calc((200px - 6 * 5px) / 7)); /* Ajustez la largeur selon vos besoins */
+    grid-template-columns: repeat(7, calc((200px - 6 * 5px) / 7));
     gap: 5px;
-    width: 200px; /* Ajustez la largeur selon vos besoins */
+    width: 200px;
 }
 
 .calendar-day {
@@ -124,13 +128,118 @@ header a img.logo {
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
-    white-space: nowrap; /* Empêche le texte de se couper */
-    overflow: hidden; /* Masque le débordement du contenu */
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-.today {
-    background-color: #4CAF50;
-    color: white;
+/* CSS des colonnes et des lignes */
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
+.ligne {
+    flex: 0 1 calc(25% - 20px);
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    position: relative;
+}
 
+.ligne:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.ligne img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.ligne p {
+    text-align: center;
+    margin-top: 5px; 
+    color: #001f3f;
+    font-size: large;
+}
+.ligne a {
+    text-decoration: none;
+    
+}
+/* Style pour la section de statistiques générales */
+#statistics-generales {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start; /* Alignement en haut */
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #b6c0cb;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour chaque conteneur de statistique */
+.statistic-container {
+    text-align: center; /* Centrer le contenu horizontalement */
+    margin-bottom: 20px; /* Espacement entre les conteneurs */
+    flex: 1; /* Chaque conteneur prend autant d'espace que possible */
+}
+
+/* Style pour le titre "Le Song le Plus Populaire" et "Nombre de visites du site" */
+#statistics-generales h3 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+/* Style pour les informations sur le song et le nombre de visites */
+.song-info, .visits-info {
+    margin-top: 15px;
+}
+
+/* Style pour le conteneur de l'image du song */
+.song-info .cover-container {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 150px;
+    margin: 0 auto;
+}
+
+/* Style pour l'image de la couverture du song */
+.song-info img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 60px;
+    margin: 0 auto; /* Centrer l'image horizontalement */
+}
+#statistics-generales img{
+    max-width: 120px;
+    height: 120px;
+    display: block;
+    border-radius: 60px;
+    margin: 0 auto; /* Centrer l'image horizontalement */
+}
+
+/* Style pour le titre du song sous l'image */
+.song-info p {
+    font-size: smaller;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Style spécifique pour le nombre de visites */
+.visits-info {
+    font-weight: bold; /* Met le texte en gras */
+    display: flex;
+    align-items: center; /* Centrer verticalement le contenu */
+    justify-content: center; /* Centrer horizontalement le contenu */
+    width: 100px;
+    height: 100px;
+    padding: 10px; /* Ajustez la taille du cercle selon vos besoins */
+    background-color: #001f3f;
+    border-radius: 50%; /* Utilisez 50% pour un cercle parfait */
+    margin: 0 auto;
+    color: rgb(255, 246, 246); /* Couleur du texte */
+    text-align: center;
+}
