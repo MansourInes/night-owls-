@@ -27,6 +27,42 @@ footer {
     text-align: center;
 }
 
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    background-color: #001f3f; 
+    color: #fff;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section h3 {
+    margin-bottom:3px;
+}
+
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+    line-height: 2;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: red;
+}
+
+.footer-bottom {
+    text-align: center;
+    background-color: #001931;
+    color: #fff;
+    padding: 3px 10;
+}
+
 /* Style général pour le header */
 header {
     display: flex;
