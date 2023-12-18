@@ -1,6 +1,6 @@
 </main>
 <footer>
-    <link rel="stylesheet" href="css-jour.css">
+    <link rel="stylesheet" href="./vue/footer/assets/style.css">
     <div class="footer-content">
         <div class="footer-section">
             <h3>TEST</h3>

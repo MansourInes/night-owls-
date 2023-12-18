@@ -1,0 +1,46 @@
+body {
+    background-color: #fdfdfe;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+.diagramme {
+    width: 500px;
+    height: 300px;
+}
+
+section {
+    text-align: center;
+}
+
+section.general-stats {
+    display: flex;
+    justify-content: center;
+
+}
+
+.p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.stat_gen {
+    width: 200px;
+    height: 200px;
+    margin-right: 30px;
+    margin-left: 30px;
+    background-color: rgb(180, 184, 187);
+}
+
+
+
+/*Liens pour trouver des DJS : https://linkaband.com/animation-boite-nuit/dj */

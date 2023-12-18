@@ -1,0 +1,67 @@
+body {
+    background-color: #f8f8f8;
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+main {
+    margin: 30px;
+}
+
+/* Styles pour la barre de navigation */
+.navbar {
+    background-color: #001f3f !important;
+    color: white;
+    padding: 10px 20px;
+}
+
+/* Style général pour le header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #001f3f;
+    color: white;
+    padding: 15px;
+}
+
+/* Style pour le logo */
+header a img.logo {
+    width: 150px;
+    height: auto;
+}
+
+/* Style pour la barre de navigation */
+#header-nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.a-header {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    margin-right: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.a-header:hover {
+    background-color: #004080;
+}
+
+/* Style pour le bouton de connexion */
+#connexion-button {
+    background-color: #004080;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#connexion-button:hover {
+    background-color: #001f3f;
+}

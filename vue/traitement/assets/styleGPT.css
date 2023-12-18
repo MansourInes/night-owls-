@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+.container-page {
+    background: #f8f8f8;
+}
+
+.page {
+    padding: 20px;
+}
+
+#traiterParent {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+h2.title {
+    margin: 20px 0;
+}
+
+.diagramme {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    margin-bottom: 30px;
+}
+
+.graphique img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.graphique p {
+    text-align: center;
+    margin-top: 10px;
+    color: #555;
+}
+
+.legend {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.fils-legend {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.legend-humaines,
+.legend-musical {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.legend-humaines {
+    background: red;
+}
+
+.legend-musical {
+    background: blue;
+}
+
+.name-legend {
+    color: #333;
+}
+
+.conclusion {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.conclusion h2 {
+    margin-bottom: 20px;
+}
+
+.conclusion p {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+}
+
+#legend2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#legend2 .btn {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #2980b9;
+}
