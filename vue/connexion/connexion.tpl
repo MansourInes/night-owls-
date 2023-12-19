@@ -8,9 +8,6 @@
 </head>
 
 <body>
-    <header>
-        <!-- Include navbar here if needed -->
-    </header>
     <div id="page">
         <div class="form">
             <h1 class="Titre">Se connecter</h1>
@@ -28,8 +25,7 @@
                         </div>
                     </label>
                 </div>
-                <!--<a id="inscription" href="./index.php?controle=inscription&action=inscription">!-->
-                <a id="inscription" href="../inscription/inscription.html">
+                <a id="inscription" href="./index.php?controle=inscription&action=inscription">
                     <p>Pas de compte ?
                         S'inscrire</p>
                 </a>

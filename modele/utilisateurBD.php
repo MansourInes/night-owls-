@@ -3,13 +3,11 @@
 	{
 		global $resId;
 		require('./modele/connectSQL.php'); //$pdo est défini dans ce fichier
-		$mdp = "$2y$10$2IxbUQt95GbRXIQMoRtsgef3iZlp880rfOGawd47oDB";
-		$sql = "SELECT `id_utilisateur`, `mot_de_passe` FROM `utilisateur` WHERE `mail` = :login and `mot_de_passe` = :mdp" ;
+		$sql = "SELECT `id_utilisateur`, `mot_de_passe`, `prenom` FROM `utilisateur` WHERE `mail` = :login";
 	
 		try {
 			$commande = $pdo->prepare($sql);
 			$commande->bindParam(':login', $login);
-			$commande->bindParam(':mdp', $mdp);
 			$bool = $commande->execute();
 	
 			if ($bool) {
@@ -19,11 +17,10 @@
 			echo utf8_encode("Echec de la sélection : " . $e->getMessage() . "\n");
 			die(); // On arrête tout.
 		}
-		echo($resultat);
+	
 		if (!$resultat) {
 			return false; // L'utilisateur n'existe pas
 		}
-		else return true;
 	
 		$hashedPassword = $resultat['mot_de_passe'];
 	
@@ -31,6 +28,7 @@
 		if (password_verify($mdp, $hashedPassword)) {
 			$resId = $resultat['id_utilisateur'];
 			$_SESSION['id'] = $resId;
+			$_SESSION['prenom'] = $resultat['prenom'];
 			return true; // Mot de passe correct
 		} else {
 			return false; // Mot de passe incorrect
@@ -39,10 +37,10 @@
 
     function verifEmail($email) {
 		require('./modele/connectSQL.php'); //$pdo est défini dans ce fichier
-		$sql="SELECT emailExists(:mail) FROM `utilisateurs`";
+		$sql = "SELECT `id_utilisateur` FROM `utilisateur` WHERE `mail` = :email";
 		try {
 			$commande = $pdo->prepare($sql);
-			$commande->bindParam(':mail', $email);
+			$commande->bindParam(':email', $email);
 			$bool = $commande->execute();
 			if ($bool) {
 				$resultat = $commande->fetchAll(PDO::FETCH_ASSOC); //tableau d'enregistrements
@@ -52,11 +50,7 @@
 			echo utf8_encode("Echec de select : " . $e->getMessage() . "\n");
 			die();
 		}
-		//var_dump($resultat);
-		$param = "emailExists('" . $email . "')";
-		$int = (int)$resultat[0][$param];
-		
-		if ($int == 0) return false; 
+		if ($resultat == null) return false; 
 		else {
 			return true;
 		}
@@ -87,18 +81,25 @@
 		}
 	}
 
-	function signIn($login, $email, $mdp) {
-		require('./modele/connectSQL.php'); //$pdo est défini dans ce fichier
-		$sql="CALL signIn(:log,:email,:mdp)";
+	function signIn($login, $email, $nom, $prenom, $age, $sexe, $ville, $estDJ, $mdp) {
+		require('./modele/connectSQL.php');
+	
+		$sql = "INSERT INTO utilisateur (mail, nom, prenom, age_, sexe, ville, estDJ, mot_de_passe) 
+				VALUES (:email, :nom, :prenom, :age, :sexe, :ville, :estDJ, :mdp)";
+		
 		try {
 			$commande = $pdo->prepare($sql);
-			$commande->bindParam(':log', $login);
 			$commande->bindParam(':email', $email);
+			$commande->bindParam(':nom', $nom);
+			$commande->bindParam(':prenom', $prenom);
+			$commande->bindParam(':age', $age);
+			$commande->bindParam(':sexe', $sexe);
+			$commande->bindParam(':ville', $ville);
+			$commande->bindParam(':estDJ', $estDJ);
 			$commande->bindParam(':mdp', $mdp);
 			$commande->execute();
-		}
-		catch (PDOException $e) {
-			echo utf8_encode("Echec de select : " . $e->getMessage() . "\n");
+		} catch (PDOException $e) {
+			echo utf8_encode("Echec de l'insertion : " . $e->getMessage() . "\n");
 			die();
 		}
 	}

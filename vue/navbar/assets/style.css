@@ -52,7 +52,8 @@ header a img.logo {
 }
 
 /* Style pour le bouton de connexion */
-#connexion-button {
+#connexion-button,
+#deconnexion-button {
     background-color: #004080;
     color: white;
     padding: 10px 15px;
@@ -62,6 +63,12 @@ header a img.logo {
     transition: background-color 0.3s ease;
 }
 
+#deconnexion-button:hover,
 #connexion-button:hover {
     background-color: #001f3f;
+}
+
+#deconnexion-button {
+    font-weight: bold;
+    transition: 0.4s;
 }

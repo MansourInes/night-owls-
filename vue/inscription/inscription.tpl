@@ -3,8 +3,8 @@
 
 <head>
     <title>PROJET WEB</title>
-    <link rel="stylesheet" href="./assets/inscription.css">
-    <script src="./assets/inscription.js"></script>
+    <link rel="stylesheet" href="./vue/inscription/assets/inscription.css">
+    <script src="./vue/inscription/assets/inscription.js"></script>
 </head>
 
 <body>
@@ -13,38 +13,44 @@
     </header>
     <div id="page">
         <div class="form">
-            <h1 class=" Titre">S'inscrire</h1>
+            <h1 class="Titre">S'inscrire</h1>
             <form action="./index.php?controle=inscription&action=inscription" method="post">
-                <label for="silogin"> <input type="text" id="silogin" name="silogin" placeholder="Login"><br></label>
-                <p class="msg" id="msgLogin"></p>
                 <label for="siemail"> <input type="email" id="siemail" name="siemail" value=""
-                        placeholder="Email"><br></label>
+                        placeholder="Email" required><br></label>
                 <p class="msg" id="emailmsg"></p>
-                <div id="mdpvue">
 
-                    <label class="labelmdp">
-                        <input type="password" id="inputmdp" name="simdp" placeholder="Mot de passe">
+                <label for="sinom"> <input type="text" id="sinom" name="sinom" placeholder="Nom"><br></label>
 
-                        <div class="password-icon">
-                            <i class="fa-regular fa-eye"></i>
-                            <i class="fa-regular fa-eye-slash"></i>
-                        </div>
-                    </label>
-                    <p class="msg" id="msgPass"></p>
-                    <label class="labelmdp">
-                        <input type="password" id="confirmmdp" name="simdp" placeholder="Confirmez le mot de passe">
-                        <div class="password-icon">
-                            <i class="fa-regular fa-eye"></i>
-                            <i class="fa-regular fa-eye-slash"></i>
-                        </div>
-                    </label>
-                    <p class="msg" id="msgConfirmPass"></p>
-                </div>
-                <!--<a id="connexion" href="./index.php?controle=connexion&action=ident">!-->
-                <a id="connexion" href="../connexion/connexion.html">
-                    <p>Déja un compte ?
-                        Se connecter</p>
+                <label for="siprenom"> <input type="text" id="siprenom" name="siprenom" placeholder="Prénom"><br></label>
+
+                <label for="siage"> <input type="number" id="siage" name="siage" placeholder="Âge"><br></label>
+
+                <!-- Nouveau champ pour le sexe -->
+                <label for="sisexe">Homme 
+                    <input type="radio" id="homme" name="sexe" value="Homme">
+                </label>
+                
+                <label for="sisexe">Femme 
+                    <input type="radio" id="femme" name="sexe" value="Femme">
+                </label><br>
+
+                <label for="siville"> <input type="text" id="siville" name="siville" placeholder="Ville"><br></label>
+
+                <label for="siestDJ"> 
+                    Êtes-vous DJ ? 
+                    <input type="checkbox" id="siestDJ" name="siestDJ" value="1">
+                </label><br>
+
+                <label for="simotdepasse"> <input type="password" id="simotdepasse" name="simotdepasse" placeholder="Mot de passe" required><br></label>
+                <p class="msg" id="msgPass"></p>
+
+                <label for="siconfirmmdp"> <input type="password" id="siconfirmmdp" name="siconfirmmdp" placeholder="Confirmez le mot de passe" required><br></label>
+                <p class="msg" id="msgConfirmPass"></p>
+
+                <a id="connexion" href="./index.php?controle=connexion&action=ident">
+                    <p>Déjà un compte ? Se connecter</p>
                 </a>
+
                 <input id="btnInput" type="submit" value="Inscription">
             </form>
             <div class="msgImportant"><!-- If needed, you can include dynamic content here --></div>

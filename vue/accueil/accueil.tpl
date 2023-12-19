@@ -19,24 +19,28 @@
                 <a href="https://shotgun.live/fr/festivals/le-jardin-d-hiver-2024-lille">
                     <img src="./vue/img/accueil/image1.png" alt="event1" title="événement : Jardin d'hiver " />
                     <p>Jardin d'hiver</p>
+                    <button class="btn-reserver">Réserver</button>
                 </a>
             </div>
             <div class='ligne'>
                 <a href="https://shotgun.live/fr/festivals/newrave-festival-2023-lunar">
                     <img src="./vue/img/accueil/image2.png" alt="event2" title="événement : new RAVE " />
                     <p>New RAVE Festival</p>
+                    <button class="btn-reserver">Réserver</button>
                 </a>
             </div>
             <div class='ligne'>
                 <a href="https://shotgun.live/fr/festivals/holiday-house">
                     <img src="./vue/img/accueil/image3.png" alt="event3" title="événement : holidays house " />
                     <p>Holidays House</p>
+                    <button class="btn-reserver">Réserver</button>
                 </a>
             </div>
             <div class='ligne'>
                 <a href="https://shotgun.live/fr/events/la-purple-nantes-christmas-edition">
                     <img src="./vue/img/accueil/image4.png" alt="event4" title="événement : Purgatory " />
                     <p>Purgatory</p>
+                    <button class="btn-reserver">Réserver</button>
                 </a>
             </div>
         </section>
@@ -46,24 +50,28 @@
                 <a href="https://shotgun.live/fr/venues/yardland">
                     <img src="./vue/img/accueil/image5.jpg" alt="event5" title="événement : Yardland " />
                     <p>Yardland</p>
+                    <button class="btn-reserver">Réserver</button>
                 </a>
             </div>
             <div class='ligne'>
                 <a href="https://shotgun.live/fr/festivals/rock-en-seine-2024">
                     <img src="./vue/img/accueil/image6.jpg" alt="event6" title="événement : Rock en Seine " />
                     <p>Rock en Seine</p>
+                    <button class="btn-reserver">Réserver</button>
                 </a>
             </div>
             <div class='ligne'>
                 <a href="https://shotgun.live/fr/events/nomadas-neptunes-fest-special-nye">
                     <img src="./vue/img/accueil/image7.jpg" alt="event7" title="événement : Culture" />
                     <p>Culture</p>
+                    <button class="btn-reserver">Réserver</button>
                 </a>
             </div>
             <div class='ligne'>
                 <a href="https://shotgun.live/fr/festivals/illuzion-market-trap-music-bar-funchal">
                     <img src="./vue/img/accueil/image8.jpg" alt="event8" title="événement : illusion market " />
                     <p>Illusion Market</p>
+                    <button class="btn-reserver">Réserver</button>
                 </a>
             </div>
         </section>

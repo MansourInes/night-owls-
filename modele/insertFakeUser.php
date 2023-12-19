@@ -1,14 +1,14 @@
 <?php
 require('./connectSQL.php'); // Assurez-vous d'inclure votre fichier de connexion PDO
 
-$mail = "test@gmail.com";
+$mail = "test2@gmail.com";
 $nom = "ESTEVES";
 $prenom = "GABRIEL";
 $age = 20;
 $sexe = "M";
 $ville = "Bezons";
 $estDJ = 0;
-$motDePasse = "test";
+$motDePasse = "motdepasse123";
 
 // Hachage du mot de passe avec Bcrypt
 $motDePasseHache = password_hash($motDePasse, PASSWORD_BCRYPT);

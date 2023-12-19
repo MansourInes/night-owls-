@@ -143,6 +143,13 @@ input[type=submit]:hover {
   text-decoration: underline;
 }
 
+input[type="checkbox"],
+input[type="radio"] {
+  width: 1rem;
+  height: 1rem;
+}
+
+
 @media screen and (max-width: 900px) {
   #page {
     width: 90%;

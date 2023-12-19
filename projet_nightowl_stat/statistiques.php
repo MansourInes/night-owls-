@@ -1,5 +1,5 @@
 <?php
-require "header.inc.php"
+require "./header.inc.php"
 ?>
 <link rel="stylesheet" href="style.css"/>
 <section>
@@ -17,7 +17,7 @@ require "header.inc.php"
         <img class="stat_gen" src="rock_en_seine.jpg" alt="">
         <p>Soirée recommandée</p>
     </a>
-<?php   require "functions.inc.php" ?>
+<?php   require "./functions.inc.php" ?>
     <a href="">
         <?= getMostPopularSongCover();?>
         <p>Meilleur son du moment</p>
@@ -31,5 +31,5 @@ require "header.inc.php"
 </section>
 
 <?php
-require "footer.inc.php"
+require "./footer.inc.php"
 ?>
