@@ -2,18 +2,35 @@ body {
     background-color: #f8f8f8;
     margin: 0;
     font-family: 'Helvetica Neue', sans-serif;
+    background: #b1d8ff;
 }
 
 main {
     margin: 30px;
 }
 
-h1 {
-    text-align: left;
-    margin-top: 50px;
-
+.page-header {
+    text-align: center;
+    /* Centre tout le contenu de .page-header */
 }
 
+.page-title {
+    color: white;
+    background-color: #0056b3;
+    padding: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: inline-block;
+    /* Restreint la largeur du fond au contenu du titre */
+    margin: 20px 0;
+    /* Ajoute de l'espace autour du titre */
+}
+
+#titre-stat {
+    font-size: 20px;
+}
 
 /* Style pour la barre de recherche */
 .search-form {
@@ -115,7 +132,6 @@ h1 {
     /* Alignement en haut */
     margin-top: 20px;
     padding: 20px;
-    background-color: #b6c0cb;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

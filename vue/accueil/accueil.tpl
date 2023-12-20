@@ -13,7 +13,9 @@
             <button type="submit">Rechercher</button>
         </form>
     </section>
-    <h1>Evenement à venir</h1>
+    <div class="page-header">
+        <h1 class="page-title">Evenement à venir</h1>
+    </div>
         <section class='columns'>
             <div class='ligne'>
                 <a href="https://shotgun.live/fr/festivals/le-jardin-d-hiver-2024-lille">
@@ -75,7 +77,9 @@
                 </a>
             </div>
         </section>
-        <h1>Statistiques Générales</h1>
+        <div class="page-header">
+            <h2 id="titre-stat" class="page-title">Statistiques Générales</h1>
+        </div>
         <section id="statistics-generales">
             <div class="statistic-container">
                 <h3>Le Song le Plus Populaire</h3>
