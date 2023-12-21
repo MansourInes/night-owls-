@@ -1,5 +1,5 @@
 body {
-    background-color: #f8f8f8;
+    /* background-color: #f8f8f8; */
     margin: 0;
     font-family: 'Helvetica Neue', sans-serif;
     background: #b1d8ff;
@@ -16,7 +16,7 @@ main {
 
 .page-title {
     color: white;
-    /* background-color: #0056b3; */
+    background-color: #0056b3;
     padding: 10px;
     font-size: 28px;
     font-weight: bold;

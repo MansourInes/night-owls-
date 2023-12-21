@@ -1,4 +1,3 @@
-/* Styles pour le pied de page */
 footer {
     background-color: #001f3f;
     color: white;
@@ -18,10 +17,11 @@ footer {
 .footer-section {
     display: flex;
     flex-direction: column;
+    align-items: center; /* Centre les éléments horizontalement */
 }
 
 .footer-section h3 {
-    margin-bottom: 3px;
+    margin-bottom: 10px; /* Espacement entre le titre et les liens */
 }
 
 .footer-section a {
@@ -32,12 +32,30 @@ footer {
 }
 
 .footer-section a:hover {
-    color: red;
+    color: #FF5252; /* Utilisation d'une couleur plus visible pour le survol */
 }
 
 .footer-bottom {
     text-align: center;
     background-color: #001931;
     color: #fff;
-    padding: 3px 10;
+    padding: 10px 0; /* Espacement dans le bas du footer */
+}
+
+/* ... Autres styles ... */
+
+
+.social-icons a {
+    color: #fff;
+    margin-right: 10px; /* Espacement entre les icônes */
+}
+
+.social-icons img {
+    width: 50px; /* Ajustez la largeur des images */
+    height: 60px; /* Ajustez la hauteur des images */
+    margin-right: 5px; /* Espacement entre les images */
+}
+
+.social-icons a:hover {
+    color: #FF5252; /* Couleur de survol */
 }
