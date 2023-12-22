@@ -14,7 +14,7 @@ function inscription() {
 		$ville = isset($_POST['siville']) ? $_POST['siville'] : '';
 		$estDJ = isset($_POST['siestDJ']) ? $_POST['siestDJ'] : '';
 		$mdp = isset($_POST['simotdepasse']) ? $_POST['simotdepasse'] : '';
-		$mdp_confirm = isset($_POST['siconfirmmdp']) ? $_POST['siconfirmmdp'] : '';
+		// $mdp_confirm = isset($_POST['siconfirmmdp']) ? $_POST['siconfirmmdp'] : '';
 	
 		
 		// Utilisation de password_hash pour hacher le mot de passe
@@ -27,9 +27,10 @@ function inscription() {
 		} else {
 			// Utilisation de la fonction signUp avec les nouveaux champs et le mot de passe haché
 			signIn($login, $email, $nom, $prenom, $age, $sexe, $ville, $estDJ, $mdp_hashed);
-
-			$url = "./index.php?controle=connexion&action=ident";
-			header("Location:" . $url);
+			verif_ident($email, $mdp);
+			$_SESSION['login'] = $login;
+			$url="./index.php?controle=accueil&action=accueil"; //redirection accueil
+            header("Location:" . $url);
 		}
 	}
 }

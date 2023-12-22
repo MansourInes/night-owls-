@@ -74,3 +74,194 @@ header a img.logo {
     font-weight: bold;
     transition: 0.4s;
 }
+
+/***************POPUP******************/
+.popup {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s linear 0.5s;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 35%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 5px solid #004080;
+    z-index: 1000;
+    overflow: auto;
+    box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.5);
+    background-color: rgb(203, 200, 200);
+}
+
+.popup.open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0s;
+}
+
+.popup-content {
+    padding: 20px;
+    margin-top: 60px;
+}
+
+label[for="sisexe"],
+label[for="siestDJ"] {
+    color: black;
+}
+
+#siville,
+#simotdepasse {
+    margin-top: 10px;
+}
+
+.close {
+    z-index: 100000000;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+}
+
+/******************************/
+
+/* Styles additionnels pour le formulaire de connexion */
+.Titre {
+    color: #004080;
+    margin: 0 auto;
+    font-size: 2rem;
+    font-weight: 1000;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.form {
+    width: 300px;
+    /* Taille fixe pour contrôler la largeur du formulaire */
+    text-align: center;
+    padding: 40px;
+    /* Fond blanc pour le formulaire */
+    border-radius: 8px;
+    /* Bords arrondis */
+    margin: auto;
+    /* Centrer dans la pop-up */
+    position: relative;
+    /* Pour positionnement absolu des éléments à l'intérieur */
+}
+
+/* Styles pour les champs de formulaire et les icônes */
+.labelmdp {
+    position: relative;
+    /* Position relative pour l'icône de l'œil */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"] {
+    font-size: 1rem;
+    padding: 10px 40px 10px 10px;
+    /* Padding à droite pour l'icône */
+    border-radius: 20px;
+    border: 2px solid #004080;
+    width: calc(100% - 22px);
+    /* Ajuster pour la bordure */
+    margin-bottom: 15px;
+}
+
+.password-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #004080;
+    cursor: pointer;
+}
+
+.password-icon i {
+    font-size: 1.2rem;
+}
+
+#eye,
+#eyeoff {
+    display: block;
+    /* Afficher par défaut */
+}
+
+#eye:hover {
+    display: none;
+    /* Masquer au survol */
+}
+
+#eyeoff {
+    display: none;
+    /* Masquer par défaut */
+}
+
+#inscription,
+#connexion {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/*
+#inputmdp:hover+.password-icon #eyeoff {
+    display: block;
+    /* Afficher quand le champ de mot de passe est survolé */
+
+/* Styles pour le bouton de soumission */
+input[type="submit"] {
+    background-color: #004080;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    /* Espace entre le dernier lien/élément et le bouton */
+    width: 100%;
+    /* Pleine largeur */
+    border-radius: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1rem;
+}
+
+input[type="submit"]:hover {
+    background-color: #002f5f;
+}
+
+/* Styles pour les liens du formulaire */
+a {
+    color: #004080;
+    margin-top: 15px;
+    /* Espace au-dessus du lien */
+    display: inline-block;
+    /* Pour permettre les marges */
+}
+
+/* Media queries pour ajuster pour les petits écrans */
+@media screen and (max-width: 900px) {
+    .form {
+        width: 80%;
+        /* Plus large sur petits écrans */
+        padding: 20px;
+        /* Moins de padding sur petits écrans */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .form {
+        width: 90%;
+        /* Encore plus large sur très petits écrans */
+    }
+}

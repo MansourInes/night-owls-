@@ -3,7 +3,7 @@
 	{
 		global $resId;
 		require('./modele/connectSQL.php'); //$pdo est défini dans ce fichier
-		$sql = "SELECT `id_utilisateur`, `mot_de_passe`, `prenom` FROM `utilisateur` WHERE `mail` = :login";
+		$sql = "SELECT `id_utilisateur`, `mot_de_passe`, `prenom`, `estDJ` FROM `utilisateur` WHERE `mail` = :login";
 	
 		try {
 			$commande = $pdo->prepare($sql);
@@ -29,6 +29,7 @@
 			$resId = $resultat['id_utilisateur'];
 			$_SESSION['id'] = $resId;
 			$_SESSION['prenom'] = $resultat['prenom'];
+			$_SESSION['estDJ'] = $resultat['estDJ'];
 			return true; // Mot de passe correct
 		} else {
 			return false; // Mot de passe incorrect

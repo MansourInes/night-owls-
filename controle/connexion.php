@@ -11,9 +11,9 @@
     else {
         require('./modele/utilisateurBD.php');
         if(!verif_ident($login,$mdp)) {
-            $msg ="Erreur de saisie OU utilisateur inconnu";
-            echo("Erreur de saisie OU utilisateur inconnu");
-            require ("./vue/connexion/connexion.tpl");
+            $msgAcc ="Erreur de saisie OU utilisateur inconnu";
+            $url="./index.php?controle=accueil&action=accueil"; //redirection accueil
+            header("Location:" . $url);
         }
         else { 
             $msg = "Vous êtes connectés";
