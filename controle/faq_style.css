@@ -1,0 +1,35 @@
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #001f3f;
+    color : #fff;
+}
+
+.faq-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.faq {
+    background: #fff;
+    color : black;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.question h2 {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.answer p {
+    margin: 0;
+}
+
+/* Additional styling can be added here */

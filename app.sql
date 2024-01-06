@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 19 déc. 2023 à 12:02
+-- Généré le : sam. 06 jan. 2024 à 14:54
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 7.4.33
 
@@ -177,7 +177,8 @@ CREATE TABLE `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`id_utilisateur`, `mail`, `nom`, `prenom`, `age_`, `sexe`, `ville`, `estDJ`, `mot_de_passe`) VALUES
-(4, 'test2@gmail.com', 'ESTEVES', 'GABRIEL', 20, 'M', 'Bezons', 0, '$2y$10$X.L63udew9pg00Ia/BovJOhIv6C3YXIg23TtpFUTmqlbeGd4FiXcO');
+(7, 'test@gmail.com', 'ESTEVES', 'Gabriel', 20, '', 'Bezons', 1, '$2y$10$gya6gibpme3GeDzEN1y1GuB2/kKqzQCufIQLFjJUsaIEhonbRGuje'),
+(14, 'test@gmail', 'ESTEVES', 'Test1', 20, '', 'test', 0, '$2y$10$gWAucUlkS33x4t9QuA/u9uueBd/3zYtMxXhqxApUrM9RKflgHaDey');
 
 --
 -- Index pour les tables déchargées
@@ -315,7 +316,7 @@ ALTER TABLE `sujet`
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Contraintes pour les tables déchargées

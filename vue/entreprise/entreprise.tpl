@@ -13,7 +13,7 @@
         }
 
         article {
-            padding: 40px;
+            padding: 20px;
         }
 
         #introduction,

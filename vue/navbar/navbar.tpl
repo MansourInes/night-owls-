@@ -10,6 +10,8 @@
     <nav id="header-nav">
         <a class="a-header" href="./index.php">Accueil</a>
         <a class="a-header" href="./index.php?controle=statistiques&action=statistiques">Statistiques</a>
+        <a class="a-header" href="./index.php?controle=faq&action=faq">FAQ</a>
+        <a class="a-header" href="./index.php?controle=entreprise&action=entreprise">Entreprise</a>
         <?php 
         if(isset($_SESSION['estDJ']) && $_SESSION['estDJ']==1)
         echo("

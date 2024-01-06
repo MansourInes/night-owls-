@@ -13,13 +13,11 @@ main {
     background-color: #001f3f !important;
     color: white;
     padding: 10px 20px;
-
 }
 
 /* Style général pour le header */
 header {
     display: flex;
-    position: fixed;
     justify-content: space-between;
     align-items: center;
     background-color: #001f3f;

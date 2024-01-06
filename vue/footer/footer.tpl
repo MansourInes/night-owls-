@@ -5,22 +5,22 @@
         <div class="footer-section">
             <h3>Notre équipe</h3>
             <a href=" https://www.linkedin.com/in/douaa-moustahsine/" target="_blank" rel="noopener noreferrer">
-                <img src="lien_vers_image_linkedin" alt="Douaa MOUSTAHSINE">
+                Douaa MOUSTAHSINE
             </a>
             <a href=" https://www.linkedin.com/in/valentin-delangle/?originalSubdomain=fr" target="_blank" rel="noopener noreferrer">
-                <img src="lien_vers_image_linkedin" alt="Valentin DELANGLE">
+                Valentin DELANGLE
             </a>
             <a href=" https://www.linkedin.com/in/axel-deligni%C3%A8res-509b41270?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">
-                <img src="lien_vers_image_linkedin" alt="Axel DELIGNIERES">
+                Axel DELIGNIERES
             </a>
             <a href="https://www.linkedin.com/in/gabrielesteves1/" target="_blank" rel="noopener noreferrer">
-                <img src="lien_vers_image_linkedin" alt="Gabriel ESTEVES">
+                Gabriel ESTEVES
             </a>
             <a href="https://www.linkedin.com/in/ines-mansour-7a8621271/" target="_blank" rel="noopener noreferrer">
-                <img src="lien_vers_image_linkedin" alt="Ines Mansour">
+                Ines Mansour
             </a>
             <a href=" https://www.linkedin.com/in/frcsberi/" target="_blank" rel="noopener noreferrer">
-                <img src="lien_vers_image_linkedin" alt="François Beri">
+                François Beri
             </a>
             
         </div>
