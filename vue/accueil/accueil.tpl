@@ -82,8 +82,9 @@
         </div>
         <section id="statistics-generales">
             <div class="statistic-container">
-                <h3>Le Song le Plus Populaire</h3>
+                <h3>La musique la plus populaire</h3>
                 <?= getMostPopularSongCover();?>
+                <p>Source : Deezer</p>
             </div>
             
             <div class="statistic-container  ">

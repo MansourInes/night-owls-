@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 19 déc. 2023 à 12:02
+-- Généré le : dim. 07 jan. 2024 à 18:42
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 7.4.33
 
@@ -168,16 +168,22 @@ CREATE TABLE `utilisateur` (
   `age_` int(11) DEFAULT NULL,
   `sexe` varchar(50) DEFAULT NULL,
   `ville` varchar(50) DEFAULT NULL,
-  `estDJ` tinyint(1) NOT NULL,
-  `mot_de_passe` varchar(200) NOT NULL
+  `estAdmin` tinyint(1) DEFAULT NULL,
+  `mot_de_passe` varchar(200) NOT NULL,
+  `estSuperAdmin` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`id_utilisateur`, `mail`, `nom`, `prenom`, `age_`, `sexe`, `ville`, `estDJ`, `mot_de_passe`) VALUES
-(4, 'test2@gmail.com', 'ESTEVES', 'GABRIEL', 20, 'M', 'Bezons', 0, '$2y$10$X.L63udew9pg00Ia/BovJOhIv6C3YXIg23TtpFUTmqlbeGd4FiXcO');
+INSERT INTO `utilisateur` (`id_utilisateur`, `mail`, `nom`, `prenom`, `age_`, `sexe`, `ville`, `estAdmin`, `mot_de_passe`, `estSuperAdmin`) VALUES
+(7, 'test@gmail.com', 'ESTEVES', 'Gabriel', 20, '', 'Bezons', 1, '$2y$10$gya6gibpme3GeDzEN1y1GuB2/kKqzQCufIQLFjJUsaIEhonbRGuje', NULL),
+(14, 'test@gmail', 'ESTEVES', 'Test1', 20, '', 'test', 0, '$2y$10$gWAucUlkS33x4t9QuA/u9uueBd/3zYtMxXhqxApUrM9RKflgHaDey', NULL),
+(15, 'test@test.com', 'Esteves', 'Gabriel', 20, 'Homme', 'Bezons', 0, '$2y$10$mz3o3p7qVfB.HqcOxqkvuuqtSWvQPv7zJp3qlM/c/x28W4qfvCh8O', 1),
+(16, 'test@test.commm', 'Esteves', 'Gabriel', 20, '', 'Bezons', 0, '$2y$10$WN06UCSaM1FQ8J8rmoZ5W./8sTRwBOnYXAPke6Pke2yAW5xbg71ai', 1),
+(17, 'test@gmai', 'dsqddsdd5', 'ddssds555', 16, '', '', 0, '$2y$10$vBtGW1HHkkc9nXsBgaUc2edMGPlnPI5XjXUkoNKWR8083RYy2EWTq', 0),
+(18, 'gabriel@gmail.com', 'Esteves', 'Gabriellll', 20, '', 'Bezons', 1, '$2y$10$zLKuA0RV2ctSwkk21tIZke.KABGO./MUdJg0Nlx.NoIrgCRmI3Gry', 0);
 
 --
 -- Index pour les tables déchargées
@@ -315,7 +321,7 @@ ALTER TABLE `sujet`
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Contraintes pour les tables déchargées

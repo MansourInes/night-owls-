@@ -37,7 +37,12 @@
                 <label for="siville"> <input type="text" id="siville" name="siville" placeholder="Ville"><br></label>
 
                 <label for="siestDJ"> 
-                    Êtes-vous DJ ? 
+                    Êtes-vous Admin ? 
+                    <input type="checkbox" id="siestDJ" name="siestDJ" value="1">
+                </label><br>
+
+                <label for="siestSuperAdmin"> 
+                    Êtes-vous Super Admin ? 
                     <input type="checkbox" id="siestDJ" name="siestDJ" value="1">
                 </label><br>
 
