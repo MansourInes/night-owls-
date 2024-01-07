@@ -3,7 +3,7 @@
 	{
 		global $resId;
 		require('./modele/connectSQL.php'); //$pdo est défini dans ce fichier
-		$sql = "SELECT `id_utilisateur`, `mot_de_passe`, `prenom`, `estDJ` FROM `utilisateur` WHERE `mail` = :login";
+		$sql = "SELECT `id_utilisateur`, `mot_de_passe`, `prenom`, `estAdmin`, `estSuperAdmin` FROM `utilisateur` WHERE `mail` = :login";
 	
 		try {
 			$commande = $pdo->prepare($sql);
@@ -29,7 +29,8 @@
 			$resId = $resultat['id_utilisateur'];
 			$_SESSION['id'] = $resId;
 			$_SESSION['prenom'] = $resultat['prenom'];
-			$_SESSION['estDJ'] = $resultat['estDJ'];
+			$_SESSION['estAdmin'] = $resultat['estAdmin'];
+			$_SESSION['estSuperAdmin'] = $resultat['estSuperAdmin'];
 			return true; // Mot de passe correct
 		} else {
 			return false; // Mot de passe incorrect
@@ -82,11 +83,11 @@
 		}
 	}
 
-	function signIn($login, $email, $nom, $prenom, $age, $sexe, $ville, $estDJ, $mdp) {
+	function signIn($login, $email, $nom, $prenom, $age, $sexe, $ville, $estAdmin, $estSuperAdmin, $mdp) {
 		require('./modele/connectSQL.php');
 	
-		$sql = "INSERT INTO utilisateur (mail, nom, prenom, age_, sexe, ville, estDJ, mot_de_passe) 
-				VALUES (:email, :nom, :prenom, :age, :sexe, :ville, :estDJ, :mdp)";
+		$sql = "INSERT INTO utilisateur (mail, nom, prenom, age_, sexe, ville, estAdmin, estSuperAdmin, mot_de_passe) 
+				VALUES (:email, :nom, :prenom, :age, :sexe, :ville, :estAdmin, :estSuperAdmin, :mdp)";
 		
 		try {
 			$commande = $pdo->prepare($sql);
@@ -96,7 +97,8 @@
 			$commande->bindParam(':age', $age);
 			$commande->bindParam(':sexe', $sexe);
 			$commande->bindParam(':ville', $ville);
-			$commande->bindParam(':estDJ', $estDJ);
+			$commande->bindParam(':estAdmin', $estAdmin);
+			$commande->bindParam(':estSuperAdmin', $estSuperAdmin);
 			$commande->bindParam(':mdp', $mdp);
 			$commande->execute();
 		} catch (PDOException $e) {

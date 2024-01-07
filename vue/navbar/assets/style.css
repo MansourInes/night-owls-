@@ -74,6 +74,9 @@ header a img.logo {
 }
 
 /***************POPUP******************/
+
+
+
 .popup {
     visibility: hidden;
     opacity: 0;
@@ -82,7 +85,7 @@ header a img.logo {
     position: fixed;
     right: 0;
     top: 0;
-    width: 35%;
+    width: 40%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -107,9 +110,16 @@ header a img.logo {
 }
 
 label[for="sisexe"],
-label[for="siestDJ"] {
+label[for="siestAdmin"],
+label[for="siestSuperAdmin"] {
     color: black;
 }
+
+label[for="siestSuperAdmin"] {
+    padding-top: 20px;
+    display: block;
+}
+
 
 #siville,
 #simotdepasse {
@@ -140,7 +150,7 @@ label[for="siestDJ"] {
 }
 
 .form {
-    width: 300px;
+    width: 400px;
     /* Taille fixe pour contrôler la largeur du formulaire */
     text-align: center;
     padding: 40px;
@@ -171,9 +181,18 @@ input[type="number"] {
     /* Padding à droite pour l'icône */
     border-radius: 20px;
     border: 2px solid #004080;
-    width: calc(100% - 22px);
+    width: 200px;
     /* Ajuster pour la bordure */
     margin-bottom: 15px;
+}
+
+.msg,
+.msgImportant {
+    color: red;
+}
+
+.fa {
+    color: black;
 }
 
 .password-icon {
@@ -187,22 +206,6 @@ input[type="number"] {
 
 .password-icon i {
     font-size: 1.2rem;
-}
-
-#eye,
-#eyeoff {
-    display: block;
-    /* Afficher par défaut */
-}
-
-#eye:hover {
-    display: none;
-    /* Masquer au survol */
-}
-
-#eyeoff {
-    display: none;
-    /* Masquer par défaut */
 }
 
 #inscription,
@@ -250,7 +253,7 @@ a {
 /* Media queries pour ajuster pour les petits écrans */
 @media screen and (max-width: 900px) {
     .form {
-        width: 80%;
+        width: 90%;
         /* Plus large sur petits écrans */
         padding: 20px;
         /* Moins de padding sur petits écrans */
@@ -262,4 +265,31 @@ a {
         width: 90%;
         /* Encore plus large sur très petits écrans */
     }
+}
+
+.input-icon {
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 200px;
+    /* Définir la largeur du conteneur */
+}
+
+.input-icon input {
+    width: 100%;
+    /* Utiliser 100% de la largeur du conteneur .input-icon */
+    padding-right: 30px;
+    /* Ajouter de l'espace à droite pour l'icône */
+}
+
+.input-icon label {
+    position: absolute;
+    right: 10px;
+    /* Positionner l'icône à 10px du bord droit */
+    top: 50%;
+    /* Centrer verticalement */
+    transform: translateY(-50%);
+    /* Ajustement fin pour le centrage vertical */
+    cursor: pointer;
 }

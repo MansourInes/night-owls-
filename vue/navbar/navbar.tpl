@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="./vue/navbar/assets/script.js"></script>
 <header>
     <a href="index.php"> 
@@ -13,7 +14,7 @@
         <a class="a-header" href="./index.php?controle=faq&action=faq">FAQ</a>
         <a class="a-header" href="./index.php?controle=entreprise&action=entreprise">Entreprise</a>
         <?php 
-        if(isset($_SESSION['estDJ']) && $_SESSION['estDJ']==1)
+        if(isset($_SESSION['estAdmin']) && $_SESSION['estAdmin']==1)
         echo("
         <a class='a-header' href='./index.php?controle=traitement&action=traitement'>Traitement</a>
             "); 
@@ -38,19 +39,16 @@
     <div class="form">
         
         <h1 class="Titre">Se connecter</h1>
-        <form action="./index.php?controle=connexion&action=ident" method="post">
+        <form>
             <label for="cologin">
                 <input type="text" id="cologin" name="cologin" placeholder="Login ou Email" value="" required><br>
             </label><br>
 
             <div class="mdp">
-                <label class="labelmdp">
-                    <input type="password" id="inputmdp" name="comdp" placeholder="Mot de passe">
-                    <div class="password-icon">
-                        <i id="eye" class="fa-regular fa-eye"></i>
-                        <i id="eyeoff" class="fa-regular fa-eye-slash"></i>
-                    </div>
-                </label>
+                <div class="input-icon">
+                    <input type="password" id="inputmdp" name="comdp" placeholder="Mot de passe" required>
+                    <label for="inputmdp" class="fa fa-eye toggle-password" onclick="togglePasswordVisibility('inputmdp');"></label>
+                </div>
             </div>
             <a id="inscription">
                 <p>Pas de compte ?
@@ -58,51 +56,85 @@
             </a>
             <input class="BtnInput" type="submit" value="Connexion">
         </form>
-        <div class="msgImportant"><?php if(isset($msgAcc)) echo $msgAcc;?></div>
+        <div id="msgConnexionImportant" class="msgImportant"></div>
     </div>
 </div>
 
 <!-- Pop-up Inscription -->
 <div id="inscription-popup" class="popup">
     <span class="close">&times;</span>
-        <div class="form">
-            <h1 class="Titre">S'inscrire</h1>
-            <form action="./index.php?controle=inscription&action=inscription" method="post">
-                <label for="siemail"> <input type="email" id="siemail" name="siemail" value=""
-                        placeholder="Email" required><br></label>
-                <p class="msg" id="emailmsg"></p>
+    <div class="form">
+        <h1 class="Titre">S'inscrire</h1>
+        <form>
+            <label for="siemail">
+                <input type="email" id="siemail" name="siemail" placeholder="Email" required>
+            </label>
+            <p class="msg" id="emailErrorMsg"></p>
 
-                <label for="sinom"> <input type="text" id="sinom" name="sinom" placeholder="Nom" required><br></label>
+            <label for="sinom">
+                <input type="text" id="sinom" name="sinom" placeholder="Nom" maxlength="20" required>
+            </label>
+            <p class="msg" id="nomErrorMsg"></p>
 
-                <label for="siprenom"> <input type="text" id="siprenom" name="siprenom" placeholder="Prénom" required><br></label>
+            <label for="siprenom">
+                <input type="text" id="siprenom" name="siprenom" placeholder="Prénom" maxlength="20" required>
+            </label>
+            <p class="msg" id="prenomErrorMsg"></p>
 
-                <label for="siage"> <input type="number" id="siage" name="siage" placeholder="Âge" required><br></label>
+            <label for="siage">
+                <input type="number" id="siage" name="siage" placeholder="Âge" required>
+            </label>
+            <p class="msg" id="ageErrorMsg"></p>
 
-                <!-- Nouveau champ pour le sexe -->
-                <label for="sisexe">Homme 
-                    <input type="radio" id="homme" name="sexe" value="Homme">
-                </label>
-                
-                <label for="sisexe">Femme 
-                    <input type="radio" id="femme" name="sexe" value="Femme">
-                </label><br>
+            <label for="sisexe">Homme
+                <input type="radio" id="homme" name="sexe" value="Homme">
+            </label>
+            <label for="sisexe">Femme 
+                <input type="radio" id="femme" name="sexe" value="Femme">
+            </label>
+            <label for="sisexe">Autre 
+                <input type="radio" id="autre" name="sexe" value="Autre">
+            </label><br>
+            <p class="msg" id="genderErrorMsg"></p>
 
-                <label for="siville"> <input type="text" id="siville" name="siville" placeholder="Ville" required><br></label>
+            <label for="siville"> 
+                <input type="text" id="siville" name="siville" placeholder="Ville" maxlength="50">
+            </label>
+            <p class="msg" id="villeErrorMsg"></p>
 
-                <label for="siestDJ"> 
-                    Êtes-vous DJ ? 
-                    <input type="checkbox" id="siestDJ" name="siestDJ" value="1">
-                </label><br>
+            <label for="siestAdmin">Êtes-vous Admin ? 
+                <input type="checkbox" id="siestAdmin" name="siestAdmin" value="1">
+            </label>
+            <p class="msg" id="adminErrorMsg"></p>
 
-                <label for="simotdepasse"> <input type="password" id="simotdepasse" name="simotdepasse" placeholder="Mot de passe" required><br></label>
-                <p class="msg" id="msgPass"></p>
-                
-                <a id="connexion">
-                    <p>Déjà un compte ? Se connecter</p>
-                </a>
-                <input id="btnInput" type="submit" value="Inscription">
-            </form>
-            <div class="msgImportant"><?php if(isset($msgAcc)) echo $msgAcc;?></div>
-        </div>
+            <label for="siestSuperAdmin">Êtes-vous Super Admin ? 
+                <input type="checkbox" id="siestSuperAdmin" name="siestSuperAdmin" value="1">
+            </label>
+            <p class="msg" id="superAdminErrorMsg"></p>
+
+            <input type="number" id="verificationCode" name="verificationCode" min="0" max="999999" placeholder="Code vérification">
+            <p class="msg" id="codeErrorMsg"></p>
+
+            <div class="input-icon">
+                <input type="password" id="simotdepasse" name="simotdepasse" placeholder="Mot de passe" required>
+                <label for="simotdepasse" class="fa fa-eye toggle-password" onclick="togglePasswordVisibility('simotdepasse');"></label>
+            </div>
+            <p class="msg" id="passwordErrorMsg"></p>
+            
+            <div class="input-icon">
+                <input type="password" id="simotdepasseConfirm" name="simotdepasseConfirm" placeholder="Confirmer le mot de passe" required>
+                <label for="simotdepasseConfirm" class="fa fa-eye toggle-password" onclick="togglePasswordVisibility('simotdepasseConfirm');"></label>
+            </div>
+            <p class="msg" id="passwordConfirmErrorMsg"></p>
+            
+            
+            
+            <a id="connexion">
+                <p>Déjà un compte ? Se connecter</p>
+            </a>
+            <input id="btnInput" type="submit" value="Inscription">
+        </form>
+        <div id="msgInscriptionImportant" class="msgImportant"></div>
+    </div>
 </div>
 </header>

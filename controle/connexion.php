@@ -1,26 +1,23 @@
 <?php
-   function ident(){
-    $login =  isset($_POST['cologin'])?($_POST['cologin']):'';
-    $mdp =  isset($_POST['comdp'])?($_POST['comdp']):'';
-    $msg = '';
-    $msgAcc = isset($_SESSION['msgAcc'])?($_SESSION['msgAcc']):'';
+function ident() {
+    $login = isset($_POST['cologin']) ? $_POST['cologin'] : '';
+    $mdp = isset($_POST['comdp']) ? $_POST['comdp'] : '';
+    $msgAcc = isset($_SESSION['msgAcc']) ? $_SESSION['msgAcc'] : '';
 
-    if(count($_POST)==0) {
-        require ("./vue/connexion/connexion.tpl");
-    }
-    else {
+    if (count($_POST) == 0) {
+        require("./vue/connexion/connexion.tpl");
+    } else {
         require('./modele/utilisateurBD.php');
-        if(!verif_ident($login,$mdp)) {
-            $msgAcc ="Erreur de saisie OU utilisateur inconnu";
-            $url="./index.php?controle=accueil&action=accueil"; //redirection accueil
-            header("Location:" . $url);
-        }
-        else { 
-            $msg = "Vous êtes connectés";
+        header('Content-Type: application/json'); // Définit le type de contenu de la réponse une seule fois
+
+        if (!verif_ident($login, $mdp)) {
+            // Si les identifiants sont incorreacts, renvoyez un message d'erreur
+            echo json_encode(["success" => false, "message" => "Erreur de saisie ou utilisateur inconnu, veuillez réessayer."]);
+        } else { 
+            // Si la connexion est réussie, renvoyez une confirmation et l'URL de redirection
             $_SESSION['login'] = $login;
-            $url="./index.php?controle=accueil&action=accueil"; //redirection accueil
-            header("Location:" . $url);
+            echo json_encode(["success" => true, "redirect" => "./index.php?controle=accueil&action=accueil"]);
         }
-    }	
+    }    
 }
 ?>
