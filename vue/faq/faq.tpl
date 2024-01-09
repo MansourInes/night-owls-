@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>FAQ Page</title>
-    <link rel="stylesheet" type="text/css" href="faq_style.css">
+    <link rel="stylesheet" type="text/css" href="faq.css">
     <script src="faq_script.js"></script>
 </head>
 <body>
