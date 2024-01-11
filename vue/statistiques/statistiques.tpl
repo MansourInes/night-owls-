@@ -35,7 +35,7 @@
                 <a href="">
                     <p class="p">Meilleur son du moment</p>
                     <?= getMostPopularSongCover(); ?>
-                    
+                    <p id="deezer"> Source : Deezer</p>
                 </a>
                 <a href="https://soundcloud.com/user-685208605">
                     <img class="stat_gen" src="./vue/img/statistiques/pp_dj.jpg" alt="">
