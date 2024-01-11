@@ -11,26 +11,24 @@ function backoffice(){
 function recupUsers(){
     require("./modele/backoffice.php");
     header('Content-Type: application/json');
-    //return json_encode(getTableUsers());
-    $json = '[
-        {
-            "id": 1,
-            "nom": "Jean Dupont",
-            "email": "jean.dupont@example.com"
-        },
-        {
-            "id": 2,
-            "nom": "Marie Curie",
-            "email": "marie.curie@example.com"
-        },
-        {
-            "id": 3,
-            "nom": "Henri Poincaré",
-            "email": "henri.poincare@example.com"
-        }
-    ]';
-    return ($json);
+    echo (json_encode(getTableUsers()));
+    
     
 }
+
+function recupEvents(){
+    require("./modele/backoffice.php");
+    header('Content-Type: application/json');
+    echo (json_encode(getTableEvents()));
+    
+}
+
+function recupBuilds(){
+    require("./modele/backoffice.php");
+    header('Content-Type: application/json');
+    echo (json_encode(getTableBuilds()));
+    
+}
+
 
 ?>

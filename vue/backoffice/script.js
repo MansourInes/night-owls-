@@ -16,14 +16,32 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Fonction appelée lorsque 'Évènements' est sélectionné
     function handleEvenements() {
-        console.log("Option 'Évènements' sélectionnée");
-        // Code spécifique pour 'Évènements'
+        $.ajax({
+            type: "GET",
+            url: "./index.php?controle=backoffice&action=recupEvents",
+             
+            success: function(response) {
+               console.log(response);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log("Erreur AJAX :", textStatus, errorThrown);
+            }            
+        });
     }
 
     // Fonction appelée lorsque 'Établissements' est sélectionné
     function handleEtablissements() {
-        console.log("Option 'Établissements' sélectionnée");
-        // Code spécifique pour 'Établissements'
+        $.ajax({
+            type: "GET",
+            url: "./index.php?controle=backoffice&action=recupBuilds",
+             
+            success: function(response) {
+               console.log(response);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log("Erreur AJAX :", textStatus, errorThrown);
+            }            
+        });
     }
 
     // Fonction exécutée lors du changement d'option
