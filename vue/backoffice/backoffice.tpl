@@ -21,52 +21,8 @@
             <option value="etablissements">Établissements</option>
         </select>
 
-        <div id="resultatTableauUtilisateurs" style="display: none;">
-            <table id="tableUtilisateurs">
-                <thead>
-                    <tr>
-                        <th>Nom</th>
-                        <th>Prénom</th>
-                        <th>Mail</th>
-                        <th>Âge</th>
-                        <th>Sexe</th>
-                        <th>Ville</th>
-                        <th>Est DJ</th>
-                    </tr>
-                </thead>
-                <tbody id="tbodyUtilisateurs"></tbody>
-            </table>
-        </div>
-        
-        <div id="resultatTableauEvenements" style="display: none;">
-            <table id="tableEvenements">
-                <thead>
-                    <tr>
-                        <th>Nom</th>
-                        <th>Capacité maximale</th>
-                        <th>Date</th>
-                        <th>Nom de l'établissement</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody id="tbodyEvenements"></tbody>
-            </table>
-        </div>
-        
-        <div id="resultatTableauEtablissements" style="display: none;">
-            <table id="tableEtablissements">
-                <thead>
-                    <tr>
-                        <th>Nom</th>
-                        <th>Capacité maximale</th>
-                        <th>Adresse</th>
-                    </tr>
-                </thead>
-                <tbody id="tbodyEtablissements"></tbody>
-            </table>
-        </div>
+        <div id="resultatTableau"></div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>

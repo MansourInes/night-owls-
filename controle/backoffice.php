@@ -7,6 +7,12 @@ function backoffice(){
     require("./vue/footer/footer.tpl");
 }
 
+function deleterow(){
+    $id = isset($_POST['id']) ? $_POST['id'] : '';
+    require("./modele/backoffice.php");
+    deleteUserById($id);
+}
+
 
 function recupUsers(){
     require("./modele/backoffice.php");
