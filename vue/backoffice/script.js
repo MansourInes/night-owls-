@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
             for (var key in row) {
                 table += '<td style="border: 1px solid black; padding: 8px;">' + row[key] + '</td>';
             }
-            table += `<td style="border: 1px solid black; padding: 8px;"><button onclick="deleteRow('${row.id_utilisateur}', this)">Supprimer</button></td>`;
+            table += `<td class="delete-button-container" style="border: 1px solid black; padding: 8px;"><button onclick="deleteRow('${row.id_utilisateur}', this)">Supprimer</button></td>`;
             table += '</tr>';
         });
 
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
             type: "GET",
             url: "./index.php?controle=backoffice&action=recupBuilds",
             success: function(response) {
-                createTable(response, 'resultatTableauEtablissements');
+                createTable(response, 'resultatTableau');
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log("Erreur AJAX :", textStatus, errorThrown);

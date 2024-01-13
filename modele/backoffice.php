@@ -2,7 +2,7 @@
 
 function getTableUsers() {
     require('./modele/connectSQL.php'); //$pdo est défini dans ce fichier
-    $sql = "SELECT * FROM utilisateur";
+    $sql = "SELECT id_utilisateur,nom,prenom,mail,age_,sexe,ville,estAdmin,estSuperAdmin FROM utilisateur";
     try {
         $stmt = $pdo->query($sql);
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
