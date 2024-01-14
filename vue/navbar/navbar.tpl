@@ -9,20 +9,37 @@
     <img src="./vue/img/navbar/logo-white.png" class="logo" alt="Logo du site" title="Retour à l'accueil"/>
     </a>
     <nav id="header-nav">
+        <!-- Ces liens sont accessibles à tous -->
         <a class="a-header" href="./index.php">Accueil</a>
+<<<<<<< Updated upstream
         <a class="a-header" href="./index.php?controle=statistiques&action=statistiques">Statistiques</a>
         <a class="a-header" href="./index.php?controle=statistiquesJS&action=statistiques">StatistiquesJS</a>
         <a class="a-header" href="./index.php?controle=faq&action=faq">FAQ</a>
         <a class="a-header" href="./index.php?controle=entreprise&action=entreprise">Entreprise</a>
         <a class="a-header" href="./index.php?controle=forum&action=forum">Forum</a>
+=======
+        <a class="a-header" href="./index.php?controle=statistiquesJS&action=statistiques">Statistiques</a>
+        <a class="a-header" href="./index.php?controle=faq&action=faq">FAQ</a>
+        
+        <!-- Ce lien est accessible si un utilisateur est connecté (vérification si l'ID est défini dans la session) -->
+>>>>>>> Stashed changes
         <?php 
-        if(isset($_SESSION['estAdmin']) && $_SESSION['estAdmin']==1)
-        echo("
-        <a class='a-header' href='./index.php?controle=traitement&action=traitement'>Traitement</a>
-            "); 
+        if (isset($_SESSION['id'])) {
+            echo "<a class='a-header' href='./index.php?controle=forum&action=forum'>Forum</a>";
+        }
         ?>
-       
+    
+        <!-- Ce lien est accessible uniquement pour les super administrateurs -->
+        <?php 
+        if (isset($_SESSION['estSuperAdmin']) && $_SESSION['estSuperAdmin'] == 1) {
+            echo "<a class='a-header' href='./index.php?controle=backoffice&action=backoffice'>Backoffice</a>";
+        }
+        ?>
+
+        <a class="a-header" href="./index.php?controle=entreprise&action=entreprise">Entreprise</a>
+    
     </nav>
+    
     <?php 
             if(isset($_SESSION['id']))
             echo("
@@ -114,7 +131,8 @@
             </label>
             <p class="msg" id="superAdminErrorMsg"></p>
 
-            <input type="number" id="verificationCode" name="verificationCode" min="0" max="999999" placeholder="Code vérification">
+            <input type="number" id="verificationCode" name="verificationCode" class="hidden" min="0" max="999999" placeholder="Code vérification">
+
             <p class="msg" id="codeErrorMsg"></p>
 
             <div class="input-icon">

@@ -293,3 +293,7 @@ a {
     /* Ajustement fin pour le centrage vertical */
     cursor: pointer;
 }
+
+.hidden {
+    display: none;
+}

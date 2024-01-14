@@ -134,4 +134,94 @@ html {
 
 #statsJS {
     width: 100%;
+<<<<<<< Updated upstream
+=======
+}
+
+.invitation-message {
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+}
+
+.select-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+#selectEtablissement,
+#selectEvenement {
+    padding: 10px;
+    width: 250px;
+    /* ou une largeur qui s'adapte mieux à votre design */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+
+#btnLoadData {
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#btnLoadData:hover {
+    background-color: #003c7a;
+}
+
+/* Vous pouvez ajouter des styles pour les états focus et active des éléments select si nécessaire */
+#selectEtablissement:focus,
+#selectEvenement:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+#graph-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+canvas {
+    margin: 20px 0;
+}
+
+#header-nav .a-header:nth-child(2) {
+    background-color: #0562be;
+}
+
+
+#graph-container p {
+    text-align: center;
+    /* Centrer le texte */
+    font-size: 1rem;
+    /* Taille de police plus grande */
+    /* Mise en gras */
+    color: black;
+    /* Couleur en noir */
+}
+
+.graph-block {
+    border: 1px solid #000;
+    /* Bordure noire de 1px */
+    padding: 10px;
+    /* Espace à l'intérieur de la bordure */
+    margin-bottom: 20px;
+    /* Espace au-dessous de chaque graphique et conclusion */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Ombre légère pour un effet en relief */
+>>>>>>> Stashed changes
 }

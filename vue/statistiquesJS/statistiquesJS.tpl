@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="container-page">
+<<<<<<< Updated upstream
         <div id="statsJS">
             <select id="selectEtablissement">
                 <option value="">Choisir un établissement</option>
@@ -44,6 +45,44 @@
                     <img src="./vue/img/statistiques/Graphique en secteur .png" alt="" class="chart-image">
                 </a>
             </section>
+=======
+        <!-- ... -->
+        <div id="statsJS">
+            <p class="invitation-message">Sélectionnez un établissement et un événement pour afficher des statistiques détaillées.</p>
+            <div class="select-container">
+                <select id="selectEtablissement">
+                 <option value="">Choisir un établissement</option>
+                <!-- Les options seront chargées par JS -->
+                </select>
+
+                <select id="selectEvenement">
+                    <option value="">Choisir un événement</option>
+                    <!-- Les options seront chargées par JS -->
+                </select>
+
+                <button id="btnLoadData" type="submit">Charger les données</button>
+            </div>
+
+
+            <div id="graph-container">
+                <div class="graph-block">
+                    <canvas id="eventGraph"></canvas>
+                    <p id="conclusionEventGraph"></p> <!-- Conclusion pour le premier graphique -->
+                </div>
+            
+                <div class="graph-block">
+                    <canvas id="musicBarChart"></canvas>
+                    <p id="conclusionMusicBarChart"></p> <!-- Conclusion pour le deuxième graphique -->
+                </div>
+            
+                <div class="graph-block">
+                    <canvas id="averageIntensityChart"></canvas>
+                    <p id="conclusionAverageIntensityChart"></p> <!-- Conclusion pour le troisième graphique -->
+                </div>
+            </div>
+            
+        </div>
+>>>>>>> Stashed changes
             <div class="container-page">
                 <header class="page-header">
                     <h1 class="page-title">Statistiques générales</h1>

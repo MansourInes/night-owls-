@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../vue/entreprise/assets/entreprise.css">
+    <link rel="stylesheet" href="./vue/entreprise/assets/entreprise.css">
     <style>
         body {
             /* background-color: #f8f8f8; */

@@ -71,7 +71,11 @@ function loadDataForEvenement(idEvenement) {
             });
 
             var intensiteSonoreData = data.map(function(item) {
+<<<<<<< Updated upstream
                 return item.intensite_sonore;
+=======
+                return parseInt(item.intensite_sonore, 10); // Convertit chaque valeur en nombre
+>>>>>>> Stashed changes
             });
             if (currentChart1) {
                 currentChart1.destroy();
@@ -95,9 +99,45 @@ function loadDataForEvenement(idEvenement) {
                         y: {
                             beginAtZero: true
                         }
+<<<<<<< Updated upstream
                     }
                 }
             });
+=======
+                    },
+                    plugins : {
+                        title: {
+                            display: true,
+                            text: "Evolution de l'intensité sonore (dB) en fonction de l'heure",
+                            font: {
+                                size: 16, // Taille de police plus grande
+                                weight: 'bold' // Mise en gras
+                            },
+                            color: 'black' // Couleur en noir
+                        }
+                    }
+                }
+            });
+            // Après la création de currentChart1
+            var maxIntensity = Math.max(...intensiteSonoreData);
+            console.log("Max Intensity: ", maxIntensity); // Affiche l'intensité sonore maximale
+            
+            var maxIntensityIndex = intensiteSonoreData.indexOf(maxIntensity);
+            console.log("Index of Max Intensity: ", maxIntensityIndex); // Affiche l'index de l'intensité sonore maximale
+            
+            var timeOfMaxIntensity = labels[maxIntensityIndex];
+            var dateObject = new Date(timeOfMaxIntensity);
+            var formattedDate = formatDate(dateObject);
+            console.log("Time of Max Intensity: ", timeOfMaxIntensity); // Affiche le temps correspondant à l'intensité sonore maximale
+            console.log("intensite sonore data", intensiteSonoreData);
+            console.log("label", labels);
+            if (maxIntensityIndex !== -1 && timeOfMaxIntensity !== undefined) {
+                $('#conclusionEventGraph').text(`L'intensité sonore était la plus haute le ${formattedDate} avec une valeur de ${maxIntensity} dB.`);
+            } else {
+                $('#conclusionEventGraph').text("Impossible de déterminer le moment de l'intensité sonore maximale.");
+            }
+            
+>>>>>>> Stashed changes
 
             createMusicBarChart(data);
             createAverageIntensityChart(data);
@@ -140,7 +180,10 @@ function createMusicBarChart(data) {
         data: {
             labels: sortedLabels,
             datasets: [{
+<<<<<<< Updated upstream
                 label: 'Pourcentage de fois jouée',
+=======
+>>>>>>> Stashed changes
                 data: sortedData,
                 backgroundColor: [
                     // Ajoutez autant de couleurs que nécessaire ici
@@ -152,12 +195,26 @@ function createMusicBarChart(data) {
             indexAxis: 'y', // Cela rendra le graphique horizontal
             responsive: true,
             plugins: {
+<<<<<<< Updated upstream
                 legend: {
                     position: 'right', // Position de la légende
                 },
                 title: {
                     display: true,
                     text: 'Graphique en barres par musique'
+=======
+                title: {
+                    display: true,
+                    text: 'Histogramme représentant la répartition des musiques par pourcentage de diffusion',
+                    font: {
+                        size: 16, // Taille de police plus grande
+                        weight: 'bold' // Mise en gras
+                    },
+                    color: 'black' // Couleur en noir
+                },
+                legend : {
+                    display : false,
+>>>>>>> Stashed changes
                 }
             },
             scales: {
@@ -165,7 +222,11 @@ function createMusicBarChart(data) {
                     beginAtZero: true,
                     title: {
                         display: true,
+<<<<<<< Updated upstream
                         text: '%TG Somme de Nombre' // Titre de l'axe des X
+=======
+                        text: '%TG' // Titre de l'axe des X
+>>>>>>> Stashed changes
                     },
                     ticks: {
                         callback: function(value) {
@@ -183,6 +244,17 @@ function createMusicBarChart(data) {
             }
         }
     });
+<<<<<<< Updated upstream
+=======
+    // Après la création de currentChart2
+// Après la création de currentChart2
+var topMusic = sortedLabels[0];
+var topMusicCount = Object.values(musicCounts)[sortedIndices[0]];
+var topMusicPercentage = sortedData[0];
+
+$('#conclusionMusicBarChart').text(`La musique la plus jouée était "${topMusic}", jouée ${topMusicCount} fois, ce qui représente ${topMusicPercentage}% du total.`);
+
+>>>>>>> Stashed changes
 }
 
 function createAverageIntensityChart(data) {
@@ -254,15 +326,48 @@ function createAverageIntensityChart(data) {
                     formatter: function(value, context) {
                         return value + ' dB';
                     }
+<<<<<<< Updated upstream
                 }
             },
+=======
+                },
+                title: {
+                    display: true,
+                    text: "Histogramme groupé représentant la moyenne des intensité sonores par musique",
+                    font: {
+                        size: 16, // Taille de police plus grande
+                        weight: 'bold' // Mise en gras
+                    },
+                    color: 'black' // Couleur en noir
+                },
+            },
+            
+>>>>>>> Stashed changes
             responsive: true,
             maintainAspectRatio: false
         },
         plugins: [ChartDataLabels] // Assurez-vous d'avoir importé le plugin ChartDataLabels
     });
+<<<<<<< Updated upstream
+=======
+    // Après la création de currentChart3
+var highestIntensityMusic = averageIntensities[0];
+$('#conclusionAverageIntensityChart').text(`La musique avec la valeur moyenne d'intensité sonore la plus élevée est ${highestIntensityMusic.musique} avec ${highestIntensityMusic.averageIntensity} dB.`);
+
+>>>>>>> Stashed changes
 }
 
 
 
+<<<<<<< Updated upstream
 });
+=======
+});
+
+function formatDate(date) {
+    var options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+    return date.toLocaleDateString('fr-FR', options);
+}
+
+
+>>>>>>> Stashed changes

@@ -7,6 +7,28 @@ document.addEventListener('DOMContentLoaded', function() {
     var connexionPopup = document.getElementById('connexion-popup');
     var inscriptionPopup = document.getElementById('inscription-popup');
 
+    var isAdminCheckbox = document.getElementById('siestAdmin');
+    var isSuperAdminCheckbox = document.getElementById('siestSuperAdmin');
+    var verificationCodeInput = document.getElementById('verificationCode');
+    function toggleVerificationCodeInput() {
+        var isAdminCheckbox = document.getElementById('siestAdmin');
+        var isSuperAdminCheckbox = document.getElementById('siestSuperAdmin');
+        var verificationCodeInput = document.getElementById('verificationCode');
+    
+        if (isAdminCheckbox.checked || isSuperAdminCheckbox.checked) {
+            verificationCodeInput.classList.remove('hidden');
+        } else {
+            verificationCodeInput.classList.add('hidden');
+        }
+    }
+
+    // Initialiser l'état du champ de code de vérification
+    toggleVerificationCodeInput();
+
+    // Ajouter des écouteurs d'événements aux cases à cocher
+    isAdminCheckbox.addEventListener('change', toggleVerificationCodeInput);
+    isSuperAdminCheckbox.addEventListener('change', toggleVerificationCodeInput);
+
     if (deconnexionButton) {
         var originalText = deconnexionButton.innerHTML; // Stocker le texte original
 

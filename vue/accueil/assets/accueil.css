@@ -5,6 +5,10 @@ body {
     background: #b1d8ff;
 }
 
+#header-nav .a-header:nth-child(1) {
+    background-color: #0562be;
+}
+
 main {
     margin: 30px;
 }

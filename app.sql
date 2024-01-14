@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
+<<<<<<< Updated upstream
 -- Généré le : dim. 14 jan. 2024 à 02:09
+=======
+-- Généré le : dim. 14 jan. 2024 à 23:13
+>>>>>>> Stashed changes
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 7.4.33
 
@@ -351,6 +355,7 @@ CREATE TABLE `message` (
 --
 
 INSERT INTO `message` (`id_message`, `date_creation`, `contenu`, `id_utilisateur`, `id_sujet`) VALUES
+<<<<<<< Updated upstream
 (11, '2024-01-13 20:09:49', 'Premier message ! J\'ai besoin d\'aide je suis nul e', 20, 13),
 (12, '2024-01-13 20:11:55', 'jkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj', 20, 14),
 (13, '2024-01-13 20:19:54', 'Premier message ! J\'ai besoin d\'aide je suis nul en php\n', 20, 15),
@@ -363,6 +368,12 @@ INSERT INTO `message` (`id_message`, `date_creation`, `contenu`, `id_utilisateur
 (20, '2024-01-13 22:00:47', 'test', 20, 13),
 (21, '2024-01-13 22:01:03', 'knldfkf', 24, 13),
 (22, '0000-00-00 00:00:00', 'kldlk,de', 20, 17);
+=======
+(29, '2024-01-14 20:42:30', 'Voici le premier message du sujet de ce forum !!\n', 20, 18),
+(30, '2024-01-14 20:42:47', 'Bonjour comment vas-tu ?', 20, 18),
+(31, '2024-01-14 20:42:52', 'Bien et toi ? ', 20, 18),
+(32, '2024-01-14 20:45:02', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 20, 19);
+>>>>>>> Stashed changes
 
 -- --------------------------------------------------------
 
@@ -407,11 +418,16 @@ CREATE TABLE `sujet` (
 --
 
 INSERT INTO `sujet` (`id_sujet`, `titre`, `date_creation`, `id_utilisateur`) VALUES
+<<<<<<< Updated upstream
 (13, 'Test création du sujet', '2024-01-13 20:09:49', 20),
 (14, 'Test', '2024-01-13 20:11:55', 20),
 (15, 'Test', '2024-01-13 20:19:54', 20),
 (16, 'Test', '2024-01-13 20:20:17', 20),
 (17, 'Test', '2024-01-13 20:21:53', 20);
+=======
+(18, 'Premier sujet de test', '2024-01-14 20:42:30', 20),
+(19, 'Deuxième sujet ', '2024-01-14 20:45:02', 20);
+>>>>>>> Stashed changes
 
 -- --------------------------------------------------------
 
@@ -437,10 +453,14 @@ CREATE TABLE `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`id_utilisateur`, `mail`, `nom`, `prenom`, `age_`, `sexe`, `ville`, `estAdmin`, `mot_de_passe`, `estSuperAdmin`) VALUES
+<<<<<<< Updated upstream
 (19, 'gabriel95@gmail.com', 'Esteves', 'Gabriel', 20, '', '', 0, '$2y$10$vWwgaiTnDb8fdfRA2csvYep30hZ91.py499BAcB8YF0BLcNYdOvja', 0),
 (20, 'mr.estevesgabriel@hotmail.fr', 'Esteves', 'Gabriel', 20, '', 'Bezons', 0, '$2y$10$ViFY.qgA8BVuicB6aoXKOeqRFDaZjIff1LHSGEbFNemH.tbkeQ1Ga', 1),
 (21, 'estevesnicolas95@gmail.com', 'Esteves', 'Gabriel', 20, '', 'Bezons', 0, '$2y$10$WAyhJHM90DaHSpUXh4C7O.ogN1Y7UIshOzWpkQV3vmyZZeU8982qC', 1),
 (22, 'existepas@gmail.com', 'Esteves', 'Gabriel', 20, '', '', 0, '$2y$10$Zg5D2Ww4bQrvPz8BvXv8..guPim5sEI08cWvv4ZKot2qiYl81JFgy', 1),
+=======
+(20, 'mr.estevesgabriel@hotmail.fr', 'Esteves', 'Gabriel', 20, '', 'Bezons', 0, '$2y$10$ViFY.qgA8BVuicB6aoXKOeqRFDaZjIff1LHSGEbFNemH.tbkeQ1Ga', 1),
+>>>>>>> Stashed changes
 (23, 'test@gmail.com', 'Esteves', 'Gabriel', 20, '', 'Bezons', 1, '$2y$10$j6VaHPfQP/77O0lDi7/e4.CkFVghZ86wXsOILJC8cDFbh.1MYKYG6', 0),
 (24, 'testtest@gmail.com', 'Alex', 'Andries', 20, '', 'Bezns', 1, '$2y$10$x1HCa76x2371KXCcUUKPr.g5UBfSBvth4yIRYKCX2wJ5rtKHUgG1i', 0);
 
@@ -556,7 +576,11 @@ ALTER TABLE `faq`
 -- AUTO_INCREMENT pour la table `message`
 --
 ALTER TABLE `message`
+<<<<<<< Updated upstream
   MODIFY `id_message` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+=======
+  MODIFY `id_message` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+>>>>>>> Stashed changes
 
 --
 -- AUTO_INCREMENT pour la table `participer`
@@ -574,7 +598,11 @@ ALTER TABLE `question`
 -- AUTO_INCREMENT pour la table `sujet`
 --
 ALTER TABLE `sujet`
+<<<<<<< Updated upstream
   MODIFY `id_sujet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+=======
+  MODIFY `id_sujet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+>>>>>>> Stashed changes
 
 --
 -- AUTO_INCREMENT pour la table `utilisateur`

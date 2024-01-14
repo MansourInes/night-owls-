@@ -3,16 +3,25 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+<<<<<<< Updated upstream
     background: #f4f4f4;
+=======
+    background: #b1d8ff;
+    /* Couleur de fond similaire aux CGU */
+>>>>>>> Stashed changes
     color: #333;
 }
 
 .container {
+<<<<<<< Updated upstream
     width: 80%;
+=======
+>>>>>>> Stashed changes
     margin: auto;
     overflow: hidden;
 }
 
+<<<<<<< Updated upstream
 h1, h2 {
     color: #333;
 }
@@ -26,3 +35,47 @@ section {
 section h2 {
     margin-top: 0;
 }
+=======
+h1 {
+    color: black;
+    padding: 15px;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+    background-color: #0056b3;
+    /* Fond bleu pour les sous-titres */
+    padding: 15px;
+    text-align: center;
+    /* Sous-titres centralisés */
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0, 0.1);
+    /* Ombre portée pour les sous-titres /
+border-radius: 4px; / Bords arrondis pour les sous-titres */
+}
+
+.p {
+    color: black;
+    /* Couleur du texte */
+    margin: 10px auto;
+    /* Centrage des paragraphes */
+    width: 80%;
+    /* Largeur des paragraphes cohérente avec les sous-titres */
+    padding: 10px 0;
+    /* Espacement autour du texte */
+}
+
+/* Pour rendre le contenu plus lisible sur les petits écrans */
+@media (max-width: 768px) {
+
+    .container,
+    h1,
+    h2,
+    p {
+        width: 95%;
+        /* Plus de marge sur les petits écrans */
+    }
+}
+>>>>>>> Stashed changes
