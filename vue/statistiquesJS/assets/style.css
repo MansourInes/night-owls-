@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.general-stats a,
+.general-stats a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    background: #b1d8ff;
+}
+
+.container-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+
+.page-header {
+    background-color: #0056b3;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 80%;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.chart-section {
+    margin: 20px auto;
+    width: 75%;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.chart-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.separator {
+    height: 4px;
+    background: #ccc;
+    width: 75%;
+    margin: 20px auto;
+}
+
+.general-stats {
+    display: flex;
+    justify-content: space-around;
+    /* Ensure items are evenly distributed */
+    align-items: center;
+    /* Align items vertically */
+    flex-wrap: wrap;
+    /* Wrap items for responsiveness */
+    gap: 20px;
+    width: 85%;
+    /* Match the width of chart-section for consistency */
+    margin: 20px auto;
+    /* Center the section on the page */
+}
+
+.p,
+.general-stats img {
+    font-size: 20px;
+    color: #333;
+    margin: 10px 0;
+    text-align: center;
+    /* Center align text for each item */
+}
+
+.general-stats img {
+    width: 200px;
+    /* Set a fixed width */
+    height: 200px;
+    /* Set a fixed height */
+    background-color: #e1e4e8;
+    border-radius: 4px;
+    object-fit: cover;
+    /* Ensure images cover the area without distortion */
+}
+
+.song-info img {
+    display: block;
+    margin: 0 auto 10px;
+}
+
+#deezer {
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .chart-section,
+    .general-stats {
+        width: 95%;
+    }
+
+    .general-stats img {
+        width: 150px;
+        /* Smaller size for smaller screens */
+        height: 150px;
+        /* Maintain aspect ratio */
+    }
+}
+
+
+#graph-container canvas {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 400px;
+    /* Définissez la hauteur maximale souhaitée ici */
+}
+
+#statsJS {
+    width: 100%;
+}

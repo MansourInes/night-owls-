@@ -1,24 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../vue/forum/assets/forum.css">
-    <style>
-        .center-image {
-            display: block;
-            margin: 0 auto;
-        }
-        body {
-    background-color: #f8f8f8;
-    margin: 0;
-    font-family: 'Helvetica Neue', sans-serif;
-    background: #b1d8ff;
-}
-    </style>
-    <title>FORUM</title>
+    <title>Forum</title>
+    <link rel="stylesheet" href="./vue/forum/assets/forum.css">
 </head>
 <body>
-    <img src="./vue/img/under-construction-gif-11.gif" alt="page en construction" title="page en cour de construction" class="center-image">
+    <div id="forum">
+        <button id="createTopic">Créer un sujet</button>
+        <div id="topics-container">
+            <!-- Les sujets seront chargés ici -->
+        </div>
+        <div id="topic-detail" style="display:none;">
+            <button id="backToForum">Retour au Forum</button>
+            <div id="topic-messages">
+                <!-- Les messages du sujet sélectionné seront chargés ici -->
+            </div>
+            <textarea id="newMessage" placeholder="Votre message..."></textarea>
+            <button id="postMessage">Envoyer le Message</button>
+        </div>
+        
+        <!-- Pop-up pour créer un sujet -->
+        <div id="createTopicPopup" class="popupForum">
+            <div class="popup-contentForum">
+                <span class="closeForum">&times;</span>
+                <h2>Créer un nouveau sujet</h2>
+                <input type="text" id="newTopicTitle" placeholder="Titre du sujet">
+                <textarea id="newTopicMessage" maxlength=5000 cols="10" rows=10  placeholder="Message"></textarea>
+                <button id="submitNewTopic">Créer le Sujet</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./vue/forum/assets/forum.js"></script>
 </body>
 </html>

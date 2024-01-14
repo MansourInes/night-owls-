@@ -11,8 +11,10 @@
     <nav id="header-nav">
         <a class="a-header" href="./index.php">Accueil</a>
         <a class="a-header" href="./index.php?controle=statistiques&action=statistiques">Statistiques</a>
+        <a class="a-header" href="./index.php?controle=statistiquesJS&action=statistiques">StatistiquesJS</a>
         <a class="a-header" href="./index.php?controle=faq&action=faq">FAQ</a>
         <a class="a-header" href="./index.php?controle=entreprise&action=entreprise">Entreprise</a>
+        <a class="a-header" href="./index.php?controle=forum&action=forum">Forum</a>
         <?php 
         if(isset($_SESSION['estAdmin']) && $_SESSION['estAdmin']==1)
         echo("

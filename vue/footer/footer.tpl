@@ -26,8 +26,8 @@
         </div>
         <div class="footer-section">
             <h3>Nous Contacter</h3>
-            <p> (+33) 1 23 45 65 22</p>
-            <a href="mailto:nightowls@example.com">nightowls@example.com</a>
+            <p> (+33) 06 01 02 03 04</p>
+            <a href="mailto:night.owls.isep@gmail.com">night.owls.isep@gmail.com</a>
             
         </div>
         <div class="footer-section">
@@ -45,9 +45,14 @@
             <a href="./index.php?controle=forum&action=forum" target="_blank" rel="noopener noreferrer">Discute ici</a>
         </div>
         <div class="footer-section">
-            <h3>Nos reseau </h3>
+            <h3>Nos réseaux</h3>
             <a href="https://github.com/MansourInes/night-owls-" target="_blank" rel="noopener noreferrer">Github</a>
             <a href="https://www.isep.fr/" target="_blank" rel="noopener noreferrer">ISEP</a>
+        </div>
+        <div class="footer-section">
+            <h3>Droits</h3>
+            <a href="./index.php?controle=CGU&action=CGU" target="_blank" rel="noopener noreferrer">Conditions générales d'utilisations</a>
+            <a href="./index.php?controle=mentionlegales&action=mentionlegales" target="_blank" rel="noopener noreferrer">Mentions légales</a>
         </div>
         <!-- Ajoutez ceci dans votre section .footer-bottom -->
  

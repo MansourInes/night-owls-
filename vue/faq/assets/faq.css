@@ -1,11 +1,10 @@
-
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: #001f3f;
-    color : #fff;
+    color: #fff;
 }
 
 .faq-container {
@@ -14,9 +13,13 @@ body {
     padding: 20px;
 }
 
+.question:hover {
+    cursor: pointer;
+}
+
 .faq {
     background: #fff;
-    color : black;
+    color: black;
     margin-bottom: 10px;
     padding: 15px;
     border-radius: 5px;
@@ -37,12 +40,44 @@ body {
     color: red;
     margin-top: 20px;
     text-align: center;
-  }
+}
 
 #faq-search-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Styles supplémentaires pour centrer le bouton et la barre de recherche */
+#faq-search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#faq-search-input {
+    width: 50%;
+    /* Limite la largeur de la barre de recherche */
+    padding: 10px;
+    margin-right: 10px;
+    /* Ajoute un espace entre la barre de recherche et le bouton */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#faq-search-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#faq-search-button:hover {
+    background-color: #0056b3;
 }

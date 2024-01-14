@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 12 jan. 2024 à 11:24
+-- Généré le : dim. 14 jan. 2024 à 02:09
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 7.4.33
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `app`
+-- Base de données : `appv2`
 --
 
 -- --------------------------------------------------------
@@ -287,16 +287,17 @@ INSERT INTO `capteur_data` (`id_capteur_data`, `id_capteur`, `frequence`, `inten
 CREATE TABLE `etablissement` (
   `id_etablissement` int(11) NOT NULL,
   `capacite_max` int(11) DEFAULT NULL,
-  `adresse` varchar(50) DEFAULT NULL
+  `adresse` varchar(50) DEFAULT NULL,
+  `nom` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `etablissement`
 --
 
-INSERT INTO `etablissement` (`id_etablissement`, `capacite_max`, `adresse`) VALUES
-(1, 500, '2 bis Avenue Foch, 75016 Paris'),
-(2, 300, '11 Quai François Mauriac, 75013 Paris');
+INSERT INTO `etablissement` (`id_etablissement`, `capacite_max`, `adresse`, `nom`) VALUES
+(1, 500, '2 bis Avenue Foch, 75016 Paris', 'Le Duplex'),
+(2, 300, '11 Quai François Mauriac, 75013 Paris', 'Batofar');
 
 -- --------------------------------------------------------
 
@@ -334,26 +335,34 @@ CREATE TABLE `faq` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `forum`
---
-
-CREATE TABLE `forum` (
-  `id_forum` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `message`
 --
 
 CREATE TABLE `message` (
   `id_message` int(11) NOT NULL,
-  `date_creation` date DEFAULT NULL,
-  `contenu` varchar(50) DEFAULT NULL,
+  `date_creation` datetime DEFAULT NULL,
+  `contenu` text DEFAULT NULL,
   `id_utilisateur` int(11) NOT NULL,
   `id_sujet` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `message`
+--
+
+INSERT INTO `message` (`id_message`, `date_creation`, `contenu`, `id_utilisateur`, `id_sujet`) VALUES
+(11, '2024-01-13 20:09:49', 'Premier message ! J\'ai besoin d\'aide je suis nul e', 20, 13),
+(12, '2024-01-13 20:11:55', 'jkjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj', 20, 14),
+(13, '2024-01-13 20:19:54', 'Premier message ! J\'ai besoin d\'aide je suis nul en php\n', 20, 15),
+(14, '2024-01-13 20:20:17', 'Premier message ! J\'ai besoin d\'aide je suis nul en php \nPremier message ! J\'ai besoin d\'aide je suis nul e\nPremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je su', 20, 16),
+(15, '2024-01-13 20:21:53', 'Premier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul ePremier message ! J\'ai besoin d\'aide je suis nul e', 20, 17),
+(16, '2024-01-13 21:57:05', 'test', 20, 13),
+(17, '2024-01-13 21:57:29', 'test4', 20, 13),
+(18, '2024-01-13 21:59:23', 'NNNN,nnnn', 23, 13),
+(19, '2024-01-13 22:00:42', 'test', 24, 13),
+(20, '2024-01-13 22:00:47', 'test', 20, 13),
+(21, '2024-01-13 22:01:03', 'knldfkf', 24, 13),
+(22, '0000-00-00 00:00:00', 'kldlk,de', 20, 17);
 
 -- --------------------------------------------------------
 
@@ -389,10 +398,20 @@ CREATE TABLE `question` (
 CREATE TABLE `sujet` (
   `id_sujet` int(11) NOT NULL,
   `titre` varchar(50) DEFAULT NULL,
-  `date_creation` date DEFAULT NULL,
-  `id_forum` int(11) NOT NULL,
+  `date_creation` datetime DEFAULT NULL,
   `id_utilisateur` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `sujet`
+--
+
+INSERT INTO `sujet` (`id_sujet`, `titre`, `date_creation`, `id_utilisateur`) VALUES
+(13, 'Test création du sujet', '2024-01-13 20:09:49', 20),
+(14, 'Test', '2024-01-13 20:11:55', 20),
+(15, 'Test', '2024-01-13 20:19:54', 20),
+(16, 'Test', '2024-01-13 20:20:17', 20),
+(17, 'Test', '2024-01-13 20:21:53', 20);
 
 -- --------------------------------------------------------
 
@@ -422,7 +441,8 @@ INSERT INTO `utilisateur` (`id_utilisateur`, `mail`, `nom`, `prenom`, `age_`, `s
 (20, 'mr.estevesgabriel@hotmail.fr', 'Esteves', 'Gabriel', 20, '', 'Bezons', 0, '$2y$10$ViFY.qgA8BVuicB6aoXKOeqRFDaZjIff1LHSGEbFNemH.tbkeQ1Ga', 1),
 (21, 'estevesnicolas95@gmail.com', 'Esteves', 'Gabriel', 20, '', 'Bezons', 0, '$2y$10$WAyhJHM90DaHSpUXh4C7O.ogN1Y7UIshOzWpkQV3vmyZZeU8982qC', 1),
 (22, 'existepas@gmail.com', 'Esteves', 'Gabriel', 20, '', '', 0, '$2y$10$Zg5D2Ww4bQrvPz8BvXv8..guPim5sEI08cWvv4ZKot2qiYl81JFgy', 1),
-(23, 'test@gmail.com', 'Esteves', 'Gabriel', 20, '', 'Bezons', 0, '$2y$10$j6VaHPfQP/77O0lDi7/e4.CkFVghZ86wXsOILJC8cDFbh.1MYKYG6', 0);
+(23, 'test@gmail.com', 'Esteves', 'Gabriel', 20, '', 'Bezons', 1, '$2y$10$j6VaHPfQP/77O0lDi7/e4.CkFVghZ86wXsOILJC8cDFbh.1MYKYG6', 0),
+(24, 'testtest@gmail.com', 'Alex', 'Andries', 20, '', 'Bezns', 1, '$2y$10$x1HCa76x2371KXCcUUKPr.g5UBfSBvth4yIRYKCX2wJ5rtKHUgG1i', 0);
 
 --
 -- Index pour les tables déchargées
@@ -462,12 +482,6 @@ ALTER TABLE `faq`
   ADD PRIMARY KEY (`id_faq`);
 
 --
--- Index pour la table `forum`
---
-ALTER TABLE `forum`
-  ADD PRIMARY KEY (`id_forum`);
-
---
 -- Index pour la table `message`
 --
 ALTER TABLE `message`
@@ -495,7 +509,6 @@ ALTER TABLE `question`
 --
 ALTER TABLE `sujet`
   ADD PRIMARY KEY (`id_sujet`),
-  ADD KEY `sujet_ibfk_1` (`id_forum`),
   ADD KEY `sujet_ibfk_2` (`id_utilisateur`);
 
 --
@@ -540,16 +553,10 @@ ALTER TABLE `faq`
   MODIFY `id_faq` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `forum`
---
-ALTER TABLE `forum`
-  MODIFY `id_forum` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT pour la table `message`
 --
 ALTER TABLE `message`
-  MODIFY `id_message` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_message` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT pour la table `participer`
@@ -567,13 +574,13 @@ ALTER TABLE `question`
 -- AUTO_INCREMENT pour la table `sujet`
 --
 ALTER TABLE `sujet`
-  MODIFY `id_sujet` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_sujet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Contraintes pour les tables déchargées
@@ -621,7 +628,6 @@ ALTER TABLE `question`
 -- Contraintes pour la table `sujet`
 --
 ALTER TABLE `sujet`
-  ADD CONSTRAINT `sujet_ibfk_1` FOREIGN KEY (`id_forum`) REFERENCES `forum` (`id_forum`),
   ADD CONSTRAINT `sujet_ibfk_2` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id_utilisateur`);
 COMMIT;
 
