@@ -13,10 +13,6 @@
         <a class="a-header" href="./index.php">Accueil</a>
         <a class="a-header" href="./index.php?controle=statistiques&action=statistiques">Statistiques</a>
         <a class="a-header" href="./index.php?controle=faq&action=faq">FAQ</a>
-        <a class="a-header" href="./index.php?controle=entreprise&action=entreprise">Entreprise</a>
-        <a class="a-header" href="./index.php?controle=forum&action=forum">Forum</a>
-        <a class="a-header" href="./index.php?controle=statistiquesJS&action=statistiques">Statistiques</a>
-        <a class="a-header" href="./index.php?controle=faq&action=faq">FAQ</a>
         
         <!-- Ce lien est accessible si un utilisateur est connecté (vérification si l'ID est défini dans la session) -->
         <?php 
