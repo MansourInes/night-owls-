@@ -3,19 +3,10 @@
 <html>
 <head>
     <title>FAQ Page</title>
-    <link rel="stylesheet" type="text/css" href="./vue/faq/assets/faq.css">
-    <script src="./vue/faq/assets/faq_script.js"></script>
+    <link rel="stylesheet" type="text/css" href="./controle/faq_style.css">
+    <script src="./controle/faq_script.js"></script>
 </head>
 <body>
-
-    <div id="faq-search-box">
-        <input type="text" id="faq-search-input" placeholder="Barre de recherche FAQ">
-        <button id="faq-search-button">Rechercher</button>
-    </div>
-
-<div id="no-results-message" style="display: none;">
-  Désolé, je ne trouve rien qui correspond à votre recherche.
-</div>
 
 <div class="faq-container">
     <h1>Question fréquentes</h1>

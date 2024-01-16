@@ -122,3 +122,16 @@ html {
         /* Maintain aspect ratio */
     }
 }
+
+
+#graph-container canvas {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 400px;
+    /* Définissez la hauteur maximale souhaitée ici */
+}
+
+#statsJS {
+    width: 100%;
+}

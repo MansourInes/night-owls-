@@ -1,59 +1,83 @@
 body {
-    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
-    font-family: 'Helvetica Neue', sans-serif;
-    background: #b1d8ff;
+    padding: 0;
+    background-color: #001f3f;
+    color: #fff;
 }
 
-main {
-    margin: 30px;
+.faq-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
 }
 
-.page-header {
-    text-align: center;
-    /* Centre tout le contenu de .page-header */
-}
-
-.page-title {
-    color: white;
-    /* background-color: #0056b3; */
-    padding: 10px;
-    font-size: 28px;
-    font-weight: bold;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    display: inline-block;
-    /* Restreint la largeur du fond au contenu du titre */
-    margin: 20px 0;
-    /* Ajoute de l'espace autour du titre */
-}
-
-#titre-stat {
-    font-size: 20px;
-}
-
-/* Style pour la barre de recherche */
-.search-form {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.search-form input[type="text"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    width: 300px;
-}
-
-.search-form button {
-    padding: 10px 20px;
-    background-color: #004080;
-    color: white;
-    border: none;
-    border-radius: 20px;
+.question:hover {
     cursor: pointer;
 }
 
-.search-form button:hover {
-    background-color: #001f3f;
+.faq {
+    background: #fff;
+    color: black;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.question h2 {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.answer p {
+    margin: 0;
+}
+
+#no-results-message {
+    display: none;
+    color: red;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#faq-search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Styles supplémentaires pour centrer le bouton et la barre de recherche */
+#faq-search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#faq-search-input {
+    width: 50%;
+    /* Limite la largeur de la barre de recherche */
+    padding: 10px;
+    margin-right: 10px;
+    /* Ajoute un espace entre la barre de recherche et le bouton */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#faq-search-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#faq-search-button:hover {
+    background-color: #0056b3;
 }

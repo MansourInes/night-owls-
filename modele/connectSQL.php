@@ -1,12 +1,8 @@
 <?php
-	//$hostname = "vs-wamp";
 	$hostname = "localhost";
 	$base= "app";
-	//$loginBD= "econtact";	
 	$loginBD= "root";
-	//$passBD="econtact";
-	$passBD="";
-	//$pdo = null;
+	$passBD="root";
 	try {
 		// DSN (Data Source Name)pour se connecter à MySQL
 		$dsn = "mysql:server=$hostname ; dbname=$base";
@@ -28,4 +24,5 @@
 		echo utf8_encode("Echec de connexion : " . $e->getMessage() . "\n");
 		die(); // On arrête tout.
 	}
+	
 ?>	

@@ -1,67 +1,66 @@
 <?php
 function inscription() {
-    $_SESSION['msgAcc']="";
-	if(count($_POST)==0) {
-		require ("./vue/inscription/inscription.tpl");
-	}
-	else{
-		$login = isset($_POST['silogin']) ? $_POST['silogin'] : '';
-		$email = isset($_POST['siemail']) ? $_POST['siemail'] : '';
-		$nom = isset($_POST['sinom']) ? $_POST['sinom'] : '';
-		$prenom = isset($_POST['siprenom']) ? $_POST['siprenom'] : '';
-		$age = isset($_POST['siage']) ? $_POST['siage'] : '';
-		$sexe = isset($_POST['sisexe']) ? $_POST['sisexe'] : '';
-		$ville = isset($_POST['siville']) ? $_POST['siville'] : '';
-		$estDJ = isset($_POST['siestDJ']) ? $_POST['siestDJ'] : '';
-		$mdp = isset($_POST['simotdepasse']) ? $_POST['simotdepasse'] : '';
-		// $mdp_confirm = isset($_POST['siconfirmmdp']) ? $_POST['siconfirmmdp'] : '';
-	
-		
-		// Utilisation de password_hash pour hacher le mot de passe
-		$mdp_hashed = password_hash($mdp, PASSWORD_BCRYPT);
+    $_SESSION['msgAcc'] = "";
 
-		if (identExists($email)) {
-			$msgAcc = "Le login et/ou le mail existe déjà";
-			$_SESSION['msgAcc'] = $msgAcc;
-			require('./vue/inscription/inscription.tpl');
-		} else {
-			// Utilisation de la fonction signUp avec les nouveaux champs et le mot de passe haché
-			signIn($login, $email, $nom, $prenom, $age, $sexe, $ville, $estDJ, $mdp_hashed);
-			verif_ident($email, $mdp);
-			$_SESSION['login'] = $login;
-			$url="./index.php?controle=accueil&action=accueil"; //redirection accueil
-            header("Location:" . $url);
-		}
-	}
+    if (count($_POST) == 0) {
+        require("./vue/inscription/inscription.tpl");
+    } else {
+        header('Content-Type: application/json'); // Définit le type de contenu de la réponse une seule fois
+
+        $login = isset($_POST['silogin']) ? $_POST['silogin'] : '';
+        $email = isset($_POST['siemail']) ? $_POST['siemail'] : '';
+        $nom = isset($_POST['sinom']) ? $_POST['sinom'] : '';
+        $prenom = isset($_POST['siprenom']) ? $_POST['siprenom'] : '';
+        $age = isset($_POST['siage']) ? $_POST['siage'] : '';
+        $sexe = isset($_POST['sisexe']) ? $_POST['sisexe'] : '';
+        $ville = isset($_POST['siville']) ? $_POST['siville'] : '';
+        $estAdmin = isset($_POST['siestAdmin']) ? $_POST['siestAdmin'] : '';
+        $estSuperAdmin = isset($_POST['siestSuperAdmin']) ? $_POST['siestSuperAdmin'] : '';
+        $mdp = isset($_POST['simotdepasse']) ? $_POST['simotdepasse'] : '';
+        $mdp_hashed = password_hash($mdp, PASSWORD_BCRYPT);
+
+        if (identExists($email)) {
+            echo json_encode(["success" => false, "message" => "Le mail existe déjà, connectez vous."]);
+        } else {
+            envoyerEmail($email);
+            signIn($login, $email, $nom, $prenom, $age, $sexe, $ville, $estAdmin, $estSuperAdmin, $mdp_hashed);
+            verif_ident($email, $mdp);
+            $_SESSION['login'] = $login;
+            echo json_encode(["success" => true, "redirect" => "./index.php?controle=accueil&action=accueil"]);
+        }
+    }
 }
-// function inscription(){
-// 	$_SESSION['msgAcc']="";
-// 	if(count($_POST)==0) {
-// 		require ("./vue/inscription/inscription.tpl");
-// 	}
-// 	else {
-// 		$login =  isset($_POST['silogin'])?($_POST['silogin']):'';
-// 		$email =  isset($_POST['siemail'])?($_POST['siemail']):'';
-// 		$mdp =  isset($_POST['simdp'])?($_POST['simdp']):'';
-// 		if(identExists($login, $email)) {
-// 			$msgAcc = "Le login et/ou le mail existe déjà";
-// 			$_SESSION['msgAcc'] = $msgAcc;
-// 			require('./vue/inscription/inscription.tpl');
-// 		} else {
-// 			signIn($login,$email,$mdp);
-// 			$url = "./index.php?controle=connexion&action=ident";
-// 			header("Location:" .$url);
-// 		}
-// 	}	
-// }
+
 function identExists($email) {
-	require('./modele/utilisateurBD.php');
-	if(verifEmail($email)) {
-		return true;
-	} else {
-		return false;
-	}
+    require('./modele/utilisateurBD.php');
+    return verifEmail($email);
 }
 
+function envoyerEmail($to) {
+    // Pour envoyer un mail HTML, l'en-tête Content-type doit être défini
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
+    // En-têtes additionnels
+    $headers .= 'From: <night.owls.isep@gmail.com>' . "\r\n";
+
+    $subject = "Bienvenue sur Night Owls";
+    // Contenu de l'email
+    $message = "
+    <html>
+    <body>
+        <h1>Bienvenue sur Night Owls !</h1>
+        <p>Bonjour et bienvenue dans la communauté Night Owls, votre destination numéro un pour découvrir et profiter des meilleurs événements de boîte de nuit.</p>
+        <p>Nous sommes ravis de vous avoir parmi nous ! Vous trouverez sur notre site les dernières informations sur les événements nocturnes les plus chauds, ainsi que des analyses et des statistiques exclusives sur la scène musicale.</p>
+        <p><img src='https://gabrielestevesdev.github.io/mail.png' alt='Image de Bienvenue'></p>
+        <p>Restez connecté pour des mises à jour régulières sur les événements à venir, et n'hésitez pas à partager vos expériences et vos avis avec notre communauté.</p>
+        <p>Merci de nous rejoindre et préparez-vous à vivre des nuits inoubliables avec Night Owls !</p>
+        <p>Cordialement,</p>
+        <p>L'équipe Night Owls</p>
+        <p><img src='https://gabrielestevesdev.github.io/logo.jpeg' alt='Logo Night owls'></p>
+    </body>
+    </html>";
+
+    mail($to, $subject, $message, $headers);
+}
 ?>
