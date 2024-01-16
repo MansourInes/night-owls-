@@ -128,13 +128,9 @@ $(document).ready(function() {
             dataType: 'json',
             success: function(response) {
                 if (response.success) {
-<<<<<<< Updated upstream
-=======
                     $('#newTopicTitle').val('');
                     $('#newTopicMessage').val('');
->>>>>>> Stashed changes
                     loadTopics();
-
                 } else {
                     alert('Erreur lors de la création du sujet.');
                 }
