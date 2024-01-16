@@ -22,7 +22,7 @@ function inscription() {
         if (identExists($email)) {
             echo json_encode(["success" => false, "message" => "Le mail existe déjà, connectez vous."]);
         } else {
-            envoyerEmail($email);
+            //envoyerEmail($email); nécessite configuration d'un serveur smtp (configuré sur l'ordi de Gabriel)
             signIn($login, $email, $nom, $prenom, $age, $sexe, $ville, $estAdmin, $estSuperAdmin, $mdp_hashed);
             verif_ident($email, $mdp);
             $_SESSION['login'] = $login;
