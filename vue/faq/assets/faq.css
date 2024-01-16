@@ -3,18 +3,6 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-<<<<<<< Updated upstream
-    background-color: #001f3f;
-    color: #fff;
-}
-
-.faq-container {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-}
-
-=======
     background: #b1d8ff;
     color: #fff;
 }
@@ -31,7 +19,6 @@ body {
     color: black;
 }
 
->>>>>>> Stashed changes
 .question:hover {
     cursor: pointer;
 }
@@ -64,11 +51,7 @@ body {
 #faq-search-input {
     width: 100%;
     padding: 10px;
-<<<<<<< Updated upstream
-    margin-bottom: 20px;
-=======
     margin: 20px 0;
->>>>>>> Stashed changes
     border: 1px solid #ccc;
     border-radius: 5px;
 }
