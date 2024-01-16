@@ -9,44 +9,6 @@
 </head>
 <body>
     <div class="container-page">
-<<<<<<< Updated upstream
-        <div id="statsJS">
-            <select id="selectEtablissement">
-                <option value="">Choisir un établissement</option>
-                <!-- Les options seront chargées par JS -->
-            </select>
-    
-            <select id="selectEvenement">
-                <option value="">Choisir un événement</option>
-                <!-- Les options seront chargées par JS -->
-            </select>
-    
-            <button id="btnLoadData" type="submit">Charger les données</button>
-
-            <div id="graph-container">
-                <canvas id="eventGraph"></canvas>
-                <canvas id="musicBarChart"></canvas>
-                <canvas id="averageIntensityChart"></canvas>
-            </div>
-        
-            
-        </div>
-    
-        <header class="page-header">
-            <h1 class="page-title">Dernier évènement</h1>
-        </header>
-            <section class="chart-section">
-                <a>
-                    <img src="./vue/img/statistiques/intensité sonore.png" alt="" class="chart-image">
-                </a>
-            </section>
-            <section class="chart-section">
-                <a>
-                    <img src="./vue/img/statistiques/Graphique en secteur .png" alt="" class="chart-image">
-                </a>
-            </section>
-=======
-        <!-- ... -->
         <div id="statsJS">
             <p class="invitation-message">Sélectionnez un établissement et un événement pour afficher des statistiques détaillées.</p>
             <div class="select-container">
@@ -54,16 +16,12 @@
                  <option value="">Choisir un établissement</option>
                 <!-- Les options seront chargées par JS -->
                 </select>
-
                 <select id="selectEvenement">
                     <option value="">Choisir un événement</option>
                     <!-- Les options seront chargées par JS -->
                 </select>
-
                 <button id="btnLoadData" type="submit">Charger les données</button>
             </div>
-
-
             <div id="graph-container">
                 <div class="graph-block">
                     <canvas id="eventGraph"></canvas>
@@ -79,10 +37,8 @@
                     <canvas id="averageIntensityChart"></canvas>
                     <p id="conclusionAverageIntensityChart"></p> <!-- Conclusion pour le troisième graphique -->
                 </div>
-            </div>
-            
+            </div>      
         </div>
->>>>>>> Stashed changes
             <div class="container-page">
                 <header class="page-header">
                     <h1 class="page-title">Statistiques générales</h1>
@@ -110,8 +66,5 @@
      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
      <script src="./vue/statistiquesJS/assets/script.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
-
-
-
 </body>
 </html>
