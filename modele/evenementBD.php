@@ -1,8 +1,15 @@
 <?php
-require_once 'connectSQL.php'; // Assurez-vous que le chemin est correct
+require 'connectSQL.php'; // Assurez-vous que le chemin est correct
 
 class EvenementModel {
-    
+    // Récupérer les paramètres de recherche
+    private $nomEvenement;
+    private $date;
+
+    public function __construct($nomEvenement = '', $date = '') {
+        $this->nomEvenement = $nomEvenement;
+        $this->date = $date;
+    }
 
     // Méthode pour ajouter un événement
     public function ajouterEvenement($nom, $date_evenement, $capacite_max, $id_etablissement) {
@@ -42,18 +49,24 @@ class EvenementModel {
             return 'erreur: ' . $e->getMessage();
         }
     }
-
     public function recupererEvenements() {
         global $pdo;
-        try {
-            // Sélectionner uniquement les informations de l'événement
-            $sql = "SELECT nom, date_evenement FROM evenement";
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            die('Erreur SQL : ' . $e->getMessage());
-        }
+        $sql = "SELECT nom, date_evenement FROM evenement";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function __construct($date = '') {
+        $this->date = $date;
+    }
+
+    public function rechercheEvenementsParDate() {
+        global $pdo;
+        // Logique de recherche pour les événements par date
+        // Retourne un tableau des résultats
+    }
+
+    
+    
 }
 ?>

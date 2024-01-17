@@ -23,6 +23,7 @@
         echo("
         <a class='a-header' href='./index.php?controle=traitement&action=traitement'>Traitement</a>
             "); 
+            
         ?>
        
     </nav>

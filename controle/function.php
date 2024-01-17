@@ -82,6 +82,9 @@ define("SKIDDLE_API_KEY", "8c3ebc2e4824e41ee330d1512cb56b07");
 function getNightClubEvents() {
     $url = "https://www.skiddle.com/api/v1/events/search/?api_key=" . SKIDDLE_API_KEY . "&eventcode=CLUB";
 
+    if (!empty($keyword)) {
+        $url .= "&keyword=" . urlencode($keyword);
+    }
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -128,21 +131,20 @@ function showNightClubEvents(): string {
         return $html;
     }
 }    
+/**
+ * Effectue une recherche d'événements sur l'API Skiddle en utilisant un mot-clé.
+ *
+ * @param string $keyword Le mot-clé pour la recherche.
+ * @return array Les résultats de la recherche ou un message d'erreur.
+ */
+function rechercheEvenementsSkiddle($keyword) {
+    $url = "https://www.skiddle.com/api/v1/events/search/?api_key=" . SKIDDLE_API_KEY . "&eventcode=CLUB";
 
-/*Fonction pour rechercher des soirée */
-function rechercheEvenements(): string {
-    // Récupérer les critères de recherche de l'utilisateur
-    $nomEvenement = $_GET['nomEvenement'] ?? '';
-    $ville = $_GET['ville'] ?? '';
-    $date = $_GET['date'] ?? ''; // Format attendu: YYYY-MM-DD
+    // Ajoute le mot-clé à l'URL si spécifié
+    if (!empty($keyword)) {
+        $url .= "&keyword=" . urlencode($keyword);
+    }
 
-    // Construire l'URL de l'API Skiddle avec les paramètres de recherche
-    $url = "https://www.skiddle.com/api/v1/events/search/?api_key=" . SKIDDLE_API_KEY 
-           . "&eventcode=CLUB&city=" . urlencode($ville) 
-           . "&date=" . $date
-           . "&keyword=" . urlencode($nomEvenement); // Ajout du paramètre de recherche par nom d'événement
-
-    // Effectuer la requête à l'API Skiddle
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -150,31 +152,16 @@ function rechercheEvenements(): string {
     curl_close($ch);
 
     if ($response === false) {
-        return "<p>Erreur lors de la requête vers l'API Skiddle.</p>";
+        return ["error" => "Erreur lors de la requête vers l'API Skiddle."];
     }
 
     $data = json_decode($response, true);
-    $result = "";
 
-    // Vérifier si des événements sont disponibles et correspondant aux critères
     if (!empty($data['results'])) {
-        foreach ($data['results'] as $event) {
-            $eventName = $event['eventname'];
-            $eventDate = $event['date']; // Vérifiez et formatez la date
-            $eventImage = $event['largeimageurl'];
-
-            // Mise en forme HTML pour chaque événement
-            $result .= "<div class='event-container'>";
-            $result .= "<img src='" . $eventImage . "' alt='Event Cover'>";
-            $result .= "<p><strong>" . $eventName . "</strong></p>";
-            $result .= "<p>Date: " . $eventDate . "</p>";
-            $result .= "</div>";
-        }
+        return $data['results'];
     } else {
-        $result = "<p>Aucun événement trouvé pour les critères sélectionnés.</p>";
+        return ["error" => "Aucun événement correspondant trouvé."];
     }
-
-    return $result;
 }
 
 ?>

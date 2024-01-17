@@ -1,15 +1,4 @@
-<?php
 
-
-// Initialisation d'une variable pour stocker les résultats
-$resultatEvenements = '';
-
-// Vérifier si le formulaire a été soumis
-if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['ville']) && isset($_GET['date'])) {
-    // Appeler la fonction rechercheEvenements et stocker le résultat
-    $resultatEvenements = rechercheEvenements();
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,30 +7,50 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['ville']) && isset($_GET[
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./vue/accueil/assets/accueil.css">
     <title>Accueil</title>
+    <style>
+        /* Style pour le bouton "Voir les événements NightOwls" */
+        #btnAfficherEvenements {
+            padding: 10px 20px;
+            background-color: #0056b3; /* Couleur de fond bleue */
+            color: white; /* Texte blanc pour le contraste */
+            border: none; /* Pas de bordure */
+            border-radius: 5px; /* Coins arrondis */
+            cursor: pointer; /* Curseur en forme de main au survol */
+            font-weight: bold; /* Texte en gras */
+            transition: background-color 0.3s; /* Transition en douceur pour le survol */
+            margin : 20px;
+        }
+
+        #btnAfficherEvenements:hover {
+            background-color: #004080; /* Couleur de fond plus foncée au survol */
+        }
+    </style>
 </head>
 <body>
    
-    <section>
-        <form class="search-form" action="" method="get">
-            <input type="text" name="nomEvenement" placeholder="Nom de l'événement" />
-            <input type="text" name="ville" placeholder="Ville" />
-            <input type="date" name="date" placeholder="Date" />
+   <section>
+        <!-- Vue/accueil/accueil.tpl -->
+        <form class="search-form" action="index.php?controle=evenement&action=rechercher" method="get">
+            <input type="date" name="date" placeholder="Date" required />
             <button type="submit">Rechercher</button>
         </form>
-    </section>
 
-    <!-- Affichage des résultats de la recherche -->
+
+</section>
+
     <section>
-        <?= $resultatEvenements; ?>
+        <!-- Bouton pour charger les événements NightOwls -->
+        <button id="btnAfficherEvenements">Voir les événements NightOwls</button>
+        <section id="evenementsNightOwls" class="columns" style="display:none;"></section>
     </section>
-    
+  
      <section>
         <div class="page-header">
             <h1 class="page-title">Evenement à venir</h1>
         </div>
     </section>
+
     <section class='columns'>
-        
         <?=  showNightClubEvents(); ?>
     </section>
     
@@ -67,6 +76,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['ville']) && isset($_GET[
                     <img src="./vue/img/accueil/rexclublogo.jpeg" alt="logo" />
                 </a>
             </div>
-    </section>    
+    </section>  
+      <script>
+        document.getElementById('btnAfficherEvenements').addEventListener('click', function() {
+            fetch('index.php?controle=evenement&action=afficherEvenements')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('evenementsNightOwls').innerHTML = html;
+                    document.getElementById('evenementsNightOwls').style.display = 'block';
+                })
+                .catch(error => console.error('Erreur:', error));
+        });
+    </script>  
 </body>
 </html>
