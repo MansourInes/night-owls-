@@ -26,5 +26,6 @@
         <p class="p">Par email : night.owls.isep@gmail.com</p>
         <p class="p">Par courrier : 10 Rue de Vanves, 92130 Issy-les-Moulineaux</p>
     </div>
+    <script src="./modele/theme-switcher.js"></script>
 </body>
 </html>

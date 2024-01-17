@@ -70,15 +70,11 @@
             <h2>Comment puis-je contacter le support client d'Innov Tech en cas de besoin?</h2>
         </div>
         <div class="answer" style="display:none;">
-<<<<<<< Updated upstream
-            <p>Vous pouvez nous contacter à tout moment par e-mail à support@innovtech.com ou en utilisant le formulaire de contact sur notre site web. Notre équipe de support est là pour vous aider.</p>
-=======
             <p>Vous pouvez nous contacter à tout moment par e-mail à night.owls.isep@gmail.com ou en utilisant le formulaire de contact sur notre site web. Notre équipe de support est là pour vous aider.</p>
->>>>>>> Stashed changes
         </div>
     </div>
 
 </div>
-
+<script src="./modele/theme-switcher.js"></script>
 </body>
 </html>

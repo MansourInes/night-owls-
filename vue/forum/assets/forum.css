@@ -2,14 +2,15 @@ body {
     font-family: Arial, sans-serif;
     background: #b1d8ff;
 }
-
-<<<<<<< Updated upstream
-=======
+body.dark-theme{
+    font-family: Arial, sans-serif;
+    background: #000130;
+    color:white;
+}
 #header-nav .a-header:nth-child(4) {
     background-color: #0562be;
 }
 
->>>>>>> Stashed changes
 textarea {
     resize: none;
     background: #66adf4;
@@ -130,4 +131,14 @@ textarea {
     width: 95%;
     padding: 10px;
     margin-bottom: 10px;
+}
+body.dark-theme .popup-contentForum{
+    background-color: #000130;
+}
+body.dark-theme #newTopicTitle{
+    background-color:#0561bc ;
+    color:white;
+}
+body.dark-theme #newTopicTitle::placeholder{
+    color: #ddd;
 }

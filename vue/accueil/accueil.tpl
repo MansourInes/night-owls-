@@ -99,6 +99,7 @@
                     <img src="./vue/img/accueil/rexclublogo.jpeg" alt="logo" />
                 </a>
             </div>
-    </section>    
+    </section>   
+    <script src="./modele/theme-switcher.js"></script> 
 </body>
 </html>

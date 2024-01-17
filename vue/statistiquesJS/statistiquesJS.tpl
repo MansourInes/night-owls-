@@ -49,10 +49,10 @@
                     <img class="stat_gen" src="./vue/img/statistiques/rock_en_seine.jpg" alt="">
                     <p class="p">Soirée recommandée</p>
                 </a>
-                <a href="">
+                <a id="best-song"href="">
                     <p class="p">Meilleur son du moment</p>
                     <?= getMostPopularSongCover(); ?>
-                    <p id="deezer"> Source : Deezer</p>
+                    <p class="p" id="deezer"> Source : Deezer</p>
                 </a>
                 <a href="https://soundcloud.com/user-685208605">
                     <img class="stat_gen" src="./vue/img/statistiques/pp_dj.jpg" alt="">
@@ -66,5 +66,6 @@
      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
      <script src="./vue/statistiquesJS/assets/script.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+     <script src="./modele/theme-switcher.js"></script>
 </body>
 </html>

@@ -1,102 +1,21 @@
-<<<<<<< Updated upstream
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
-    color:aquamarine;
-    background:rgb(48, 38, 107);
-  }
-  
-  #page {
-    width: 90%;
-    margin: 0 auto;
-    background: rgb(17, 13, 45);
-    color:aquamarine;
-  }
-  
-  #navbar .menu .left li:last-child {
-    background: rgb(66, 60, 99);
-  }
-  
-  #navbar .menu .left li:last-child a {
-    color: black;
-  }
-  .Titre {
-    color: White;
-    margin: 0 auto;
-    font-size: 2.4rem;
-    font-weight: 1000;
-    padding-bottom: 20px;
-    text-transform: uppercase;
-    text-decoration: underline;
-  }
-
-  @media screen and (max-width: 900px) {
-    #page {
-      width: 90%;
-    }
-    .form {
-        margin: 70px auto 70px auto;
-        width: 100%;
-      }
-    
-      input {
-        margin-bottom: 6px;
-      }
-    }
-    
-    @media screen and (max-width: 800px) {
-      .form {
-        padding: 60px;
-      }
-    }
-    
-    @media screen and (max-width: 600px) {
-      input {
-        width: 240px;
-      }
-    }
-    
-    @media screen and (max-width: 400px) {
-      .form {
-        padding: 40px;
-      }
-    }
-    h1 {
-        background-color: #250d4c;
-        color: #fff;
-        padding: 35px;
-        text-align: center;
-    }
-    
-    section {
-        margin: 30px 0;
-    }
-    h2 {
-        color: #212022;
-        padding-bottom: 5px;
-        margin-bottom: 10px;
-    }
-    
-    p {
-        color: #a0a0a0;
-        margin-bottom: 10px;
-    }
-    @media screen and (max-width: 900px) {
-        #page {
-          width: 90%;
-        }
-    }
-=======
 body {
   background: #b1d8ff;
+  font-family: Arial, sans-serif;
+  /* Ajouter une police de caractères */
+}
+body.dark-theme {
+  background: #000130;
   font-family: Arial, sans-serif;
   /* Ajouter une police de caractères */
 }
 
 h1 {
   color: black;
+  padding: 15px;
+  text-align: center;
+}
+body.dark-theme h1 {
+  color: white;
   padding: 15px;
   text-align: center;
 }
@@ -123,6 +42,13 @@ h2 {
   line-height: 1.6;
   /* Améliorer l'espacement des lignes */
 }
+body.dark-theme .p {
+  color: white;
+  margin: 10px auto;
+  width: 80%;
+  line-height: 1.6;
+  /* Améliorer l'espacement des lignes */
+}
 
 /* Responsive design */
 @media (max-width: 768px) {
@@ -132,4 +58,3 @@ h2 {
     width: 95%;
   }
 }
->>>>>>> Stashed changes

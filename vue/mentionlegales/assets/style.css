@@ -3,41 +3,32 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-<<<<<<< Updated upstream
-    background: #f4f4f4;
-=======
     background: #b1d8ff;
     /* Couleur de fond similaire aux CGU */
->>>>>>> Stashed changes
+    color: #333;
+}
+body.dark-theme {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #000130;
+    /* Couleur de fond similaire aux CGU */
     color: #333;
 }
 
 .container {
-<<<<<<< Updated upstream
-    width: 80%;
-=======
->>>>>>> Stashed changes
     margin: auto;
     overflow: hidden;
 }
 
-<<<<<<< Updated upstream
-h1, h2 {
-    color: #333;
-}
-
-section {
-    margin-bottom: 20px;
-    padding: 20px;
-    background: #fff;
-}
-
-section h2 {
-    margin-top: 0;
-}
-=======
 h1 {
     color: black;
+    padding: 15px;
+    text-align: center;
+}
+body.dark-theme h1 {
+    color: white;
     padding: 15px;
     text-align: center;
 }
@@ -66,6 +57,16 @@ border-radius: 4px; / Bords arrondis pour les sous-titres */
     padding: 10px 0;
     /* Espacement autour du texte */
 }
+body.dark-theme .p {
+    color: white;
+    /* Couleur du texte */
+    margin: 10px auto;
+    /* Centrage des paragraphes */
+    width: 80%;
+    /* Largeur des paragraphes cohérente avec les sous-titres */
+    padding: 10px 0;
+    /* Espacement autour du texte */
+}
 
 /* Pour rendre le contenu plus lisible sur les petits écrans */
 @media (max-width: 768px) {
@@ -78,4 +79,3 @@ border-radius: 4px; / Bords arrondis pour les sous-titres */
         /* Plus de marge sur les petits écrans */
     }
 }
->>>>>>> Stashed changes

@@ -35,5 +35,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./vue/forum/assets/forum.js"></script>
+    <script src="./modele/theme-switcher.js"></script>
 </body>
 </html>

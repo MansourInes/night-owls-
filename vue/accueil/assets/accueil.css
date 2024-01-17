@@ -4,7 +4,12 @@ body {
     font-family: 'Helvetica Neue', sans-serif;
     background: #b1d8ff;
 }
-
+body.dark-theme {
+    background-color: #000000;
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background: #000130;
+}
 #header-nav .a-header:nth-child(1) {
     background-color: #0562be;
 }
@@ -109,6 +114,9 @@ main {
 .ligne:hover {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
+body.dark-theme .ligne:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.690);
+}
 
 .ligne img {
     width: 100%;
@@ -120,6 +128,12 @@ main {
     text-align: center;
     margin-top: 5px;
     color: #001f3f;
+    font-size: large;
+}
+body.dark-theme .ligne p {
+    text-align: center;
+    margin-top: 5px;
+    color: white;
     font-size: large;
 }
 
@@ -149,11 +163,24 @@ main {
     flex: 1;
     /* Chaque conteneur prend autant d'espace que possible */
 }
+body.dark-theme .statistic-container {
+    text-align: center;
+    /* Centrer le contenu horizontalement */
+    margin-bottom: 20px;
+    /* Espacement entre les conteneurs */
+    flex: 1;
+    /* Chaque conteneur prend autant d'espace que possible */
+    color:#fff;
+}
 
 /* Style pour le titre "Le Song le Plus Populaire" et "Nombre de visites du site" */
 #statistics-generales h3 {
     font-size: 1.5em;
     color: #333;
+}
+body.dark-theme #statistics-generales h3 {
+    font-size: 1.5em;
+    color: #fff;
 }
 
 /* Style pour les informations sur le song et le nombre de visites */
@@ -210,6 +237,26 @@ main {
     padding: 10px;
     /* Ajustez la taille du cercle selon vos besoins */
     background-color: #001f3f;
+    border-radius: 50%;
+    /* Utilisez 50% pour un cercle parfait */
+    margin: 0 auto;
+    color: rgb(255, 246, 246);
+    /* Couleur du texte */
+    text-align: center;
+}
+body.dark-theme .visits-info {
+    font-weight: bold;
+    /* Met le texte en gras */
+    display: flex;
+    align-items: center;
+    /* Centrer verticalement le contenu */
+    justify-content: center;
+    /* Centrer horizontalement le contenu */
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    /* Ajustez la taille du cercle selon vos besoins */
+    background-color: #0056b3;
     border-radius: 50%;
     /* Utilisez 50% pour un cercle parfait */
     margin: 0 auto;

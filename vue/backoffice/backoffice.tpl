@@ -28,5 +28,6 @@
         <div id="resultatTableau"></div>
     </div>
     <script src="script.js"></script>
+    <script src="./modele/theme-switcher.js"></script>
 </body>
 </html>

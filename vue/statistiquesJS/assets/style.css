@@ -11,11 +11,15 @@
     color: black;
 }
 
-body,
-html {
+body {
     width: 100%;
     height: 100%;
     background: #b1d8ff;
+}
+body.dark-theme {
+    width: 100%;
+    height: 100%;
+    background: #000130;
 }
 
 .container-page {
@@ -87,6 +91,17 @@ html {
     text-align: center;
     /* Center align text for each item */
 }
+body.dark-theme .p,
+body.dark-theme .general-stats img {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 10px 0;
+    text-align: center;
+    /* Center align text for each item */
+}
+body.dark-theme #best-song{
+    color:white;
+}
 
 .general-stats img {
     width: 200px;
@@ -134,8 +149,6 @@ html {
 
 #statsJS {
     width: 100%;
-<<<<<<< Updated upstream
-=======
 }
 
 .invitation-message {
@@ -144,6 +157,14 @@ html {
     margin-bottom: 20px;
     font-size: 18px;
     color: black;
+    font-weight: bold;
+}
+body.dark-theme .invitation-message {
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: white;
     font-weight: bold;
 }
 
@@ -164,6 +185,18 @@ html {
     background-color: #fff;
     font-size: 16px;
     color: #333;
+    cursor: pointer;
+}
+body.dark-theme #selectEtablissement,
+body.dark-theme #selectEvenement {
+    padding: 10px;
+    width: 250px;
+    /* ou une largeur qui s'adapte mieux à votre design */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #000;
+    font-size: 16px;
+    color: #ddd;
     cursor: pointer;
 }
 
@@ -213,6 +246,15 @@ canvas {
     color: black;
     /* Couleur en noir */
 }
+body.dark-theme #graph-container p {
+    text-align: center;
+    /* Centrer le texte */
+    font-size: 1rem;
+    /* Taille de police plus grande */
+    /* Mise en gras */
+    color: white;
+    /* Couleur en noir */
+}
 
 .graph-block {
     border: 1px solid #000;
@@ -223,5 +265,16 @@ canvas {
     /* Espace au-dessous de chaque graphique et conclusion */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     /* Ombre légère pour un effet en relief */
->>>>>>> Stashed changes
+    color:black;
+}
+body.dark-theme .graph-block {
+    border: 1px solid #0562be;
+    /* Bordure noire de 1px */
+    padding: 10px;
+    /* Espace à l'intérieur de la bordure */
+    margin-bottom: 20px;
+    /* Espace au-dessous de chaque graphique et conclusion */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Ombre légère pour un effet en relief */
+    color: white;
 }

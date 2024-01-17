@@ -29,6 +29,7 @@
         ?>
 
         <a class="a-header" href="./index.php?controle=entreprise&action=entreprise">Entreprise</a>
+        <a class="a-header" href="./index.php?modele=theme-switcher&action=switch">Changer de thème</a>
     
     </nav>
     

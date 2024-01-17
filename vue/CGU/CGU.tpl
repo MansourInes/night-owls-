@@ -45,6 +45,6 @@
             <p class="p">Nous mettons en place des mesures de sécurité pour protéger vos informations contre tout accès non autorisé ou toute divulgation. Cependant, aucune méthode de transmission sur Internet ou de stockage électronique n'est totalement sécurisée.</p>
         
     </section>
-
+    <script src="./modele/theme-switcher.js"></script>
 </body>
 </html>
