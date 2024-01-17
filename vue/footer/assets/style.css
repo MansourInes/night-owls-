@@ -17,11 +17,14 @@ footer {
 .footer-section {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centre les éléments horizontalement */
+    align-items: center;
+    padding-top: 5px;
+    /* Centre les éléments horizontalement */
 }
 
 .footer-section h3 {
-    margin-bottom: 10px; /* Espacement entre le titre et les liens */
+    margin-bottom: 10px;
+    /* Espacement entre le titre et les liens */
 }
 
 .footer-section a {
@@ -32,14 +35,16 @@ footer {
 }
 
 .footer-section a:hover {
-    color: #FF5252; /* Utilisation d'une couleur plus visible pour le survol */
+    color: #FF5252;
+    /* Utilisation d'une couleur plus visible pour le survol */
 }
 
 .footer-bottom {
     text-align: center;
     background-color: #001931;
     color: #fff;
-    padding: 10px 0; /* Espacement dans le bas du footer */
+    padding: 10px 0;
+    /* Espacement dans le bas du footer */
 }
 
 /* ... Autres styles ... */
@@ -47,15 +52,79 @@ footer {
 
 .social-icons a {
     color: #fff;
-    margin-right: 10px; /* Espacement entre les icônes */
+    margin-right: 10px;
+    /* Espacement entre les icônes */
 }
 
 .social-icons img {
-    width: 50px; /* Ajustez la largeur des images */
-    height: 60px; /* Ajustez la hauteur des images */
-    margin-right: 5px; /* Espacement entre les images */
+    width: 50px;
+    /* Ajustez la largeur des images */
+    height: 60px;
+    /* Ajustez la hauteur des images */
+    margin-right: 5px;
+    /* Espacement entre les images */
 }
 
 .social-icons a:hover {
-    color: #FF5252; /* Couleur de survol */
+    color: #FF5252;
+    /* Couleur de survol */
+}
+
+
+@media screen and (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+        border-top: 1px solid white;
+    }
+
+    .social-icons img {
+        width: 40px;
+        /* Taille réduite pour les petits écrans */
+        height: 40px;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .footer-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+    }
+
+    .footer-section {
+        border-top: 1px solid white;
+        width: 40%;
+        /* Chaque section prend environ la moitié de la largeur */
+        margin-bottom: 20px;
+    }
+
+    .social-icons img {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-section {
+        width: auto;
+        /* Réinitialise la largeur pour les grands écrans */
+    }
+
+    .social-icons img {
+        width: 50px;
+        /* Taille initiale */
+        height: 50px;
+    }
 }

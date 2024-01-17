@@ -22,7 +22,7 @@ header {
     align-items: center;
     background-color: #001f3f;
     color: white;
-    padding: 15px;
+    padding: 5px;
 }
 
 /* Style pour le logo */
@@ -296,4 +296,73 @@ a {
 
 .hidden {
     display: none;
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        padding: 0px;
+        /* Réduire le padding */
+    }
+
+    header a img.logo {
+        width: 100px;
+        /* Réduire la taille du logo */
+    }
+
+    .a-header {
+        padding: 6px 8px;
+        /* Réduire le padding des liens */
+        margin-right: 5px;
+        /* Réduire la marge à droite */
+        font-size: 0.8em;
+        /* Réduire la taille de la police */
+    }
+
+    #connexion-button,
+    #deconnexion-button {
+        padding: 8px 10px;
+        /* Réduire le padding des boutons */
+        font-size: 0.8em;
+        /* Réduire la taille de la police */
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+    header {
+        padding: 2px;
+        /* Ajuster légèrement le padding */
+    }
+
+    header a img.logo {
+        width: 110px;
+        /* Ajuster légèrement la taille du logo */
+    }
+
+    .a-header {
+        padding: 7px 10px;
+        /* Ajuster le padding des liens */
+        margin-right: 10px;
+        /* Ajuster la marge à droite */
+        font-size: 0.8em;
+        /* Ajuster la taille de la police */
+    }
+
+    #connexion-button,
+    #deconnexion-button {
+        padding: 9px 12px;
+        /* Ajuster le padding des boutons */
+        font-size: 0.8em;
+        /* Ajuster la taille de la police */
+    }
+}
+
+@media screen and (max-width: 750px) {
+    header a img.logo {
+        display: none;
+    }
+
+    header {
+        padding: 5px;
+    }
+
 }

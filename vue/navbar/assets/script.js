@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    
+
     // Initialiser l'état du champ de code de vérification
     toggleVerificationCodeInput();
 

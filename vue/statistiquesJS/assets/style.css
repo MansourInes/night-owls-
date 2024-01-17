@@ -16,6 +16,7 @@ body {
     height: 100%;
     background: #b1d8ff;
 }
+
 body.dark-theme {
     width: 100%;
     height: 100%;
@@ -91,6 +92,7 @@ body.dark-theme {
     text-align: center;
     /* Center align text for each item */
 }
+
 body.dark-theme .p,
 body.dark-theme .general-stats img {
     font-size: 20px;
@@ -99,8 +101,9 @@ body.dark-theme .general-stats img {
     text-align: center;
     /* Center align text for each item */
 }
-body.dark-theme #best-song{
-    color:white;
+
+body.dark-theme #best-song {
+    color: white;
 }
 
 .general-stats img {
@@ -159,6 +162,7 @@ body.dark-theme #best-song{
     color: black;
     font-weight: bold;
 }
+
 body.dark-theme .invitation-message {
     margin-top: 30px;
     text-align: center;
@@ -187,6 +191,7 @@ body.dark-theme .invitation-message {
     color: #333;
     cursor: pointer;
 }
+
 body.dark-theme #selectEtablissement,
 body.dark-theme #selectEvenement {
     padding: 10px;
@@ -246,6 +251,7 @@ canvas {
     color: black;
     /* Couleur en noir */
 }
+
 body.dark-theme #graph-container p {
     text-align: center;
     /* Centrer le texte */
@@ -265,8 +271,9 @@ body.dark-theme #graph-container p {
     /* Espace au-dessous de chaque graphique et conclusion */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     /* Ombre légère pour un effet en relief */
-    color:black;
+    color: black;
 }
+
 body.dark-theme .graph-block {
     border: 1px solid #0562be;
     /* Bordure noire de 1px */
@@ -277,4 +284,87 @@ body.dark-theme .graph-block {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     /* Ombre légère pour un effet en relief */
     color: white;
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+
+    .container-page,
+    #graph-container {
+        width: 95%;
+        /* Ajuster la largeur pour les écrans moyens */
+    }
+
+    .select-container {
+        flex-direction: column;
+        /* Les éléments de sélection en colonne */
+        align-items: center;
+    }
+
+    #selectEtablissement,
+    #selectEvenement,
+    #btnLoadData {
+        width: 80%;
+        /* Ajuster la largeur des éléments de sélection et du bouton */
+        margin-bottom: 10px;
+        /* Ajouter un espace en dessous de chaque élément */
+    }
+
+    .general-stats img {
+        width: 180px;
+        /* Ajuster la taille des images */
+        height: 180px;
+    }
+
+    .page-header,
+    .page-title {
+        font-size: 24px;
+        /* Réduire la taille de la police pour l'en-tête */
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .container-page,
+    #graph-container {
+        width: 100%;
+        /* Utiliser toute la largeur disponible */
+    }
+
+    .select-container {
+        flex-direction: column;
+        /* Les éléments de sélection en colonne */
+        align-items: center;
+    }
+
+    #selectEtablissement,
+    #selectEvenement,
+    #btnLoadData {
+        width: 90%;
+        /* Ajuster la largeur des éléments de sélection et du bouton */
+        margin-bottom: 10px;
+        /* Ajouter un espace en dessous de chaque élément */
+    }
+
+    .general-stats img {
+        width: 120px;
+        /* Réduire davantage la taille des images */
+        height: 120px;
+    }
+
+    .page-header,
+    .page-title {
+        font-size: 20px;
+        /* Réduire davantage la taille de la police pour l'en-tête */
+    }
+
+    .invitation-message,
+    #graph-container p {
+        font-size: 16px;
+        /* Réduire la taille de la police pour les messages */
+    }
+
+    .graph-block {
+        padding: 5px;
+        /* Réduire le padding pour les graphiques */
+    }
 }
