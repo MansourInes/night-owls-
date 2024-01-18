@@ -29,7 +29,6 @@
         ?>
 
         <a class="a-header" href="./index.php?controle=entreprise&action=entreprise">Entreprise</a>
-        <a class="a-header" href="./index.php?modele=theme-switcher&action=switch">Thème</a>
     
     </nav>
     
@@ -44,6 +43,17 @@
             else 
             echo("<a class='a-header' id='connexion-button'>Authentification</a>");
     ?>
+    
+    <!-- <a class="a-header" href="./index.php?modele=theme-switcher&action=switch">Thème</a> -->
+
+    <!-- Placez ceci dans le corps de votre page HTML -->
+    <input type="checkbox" id="themeSwitch" class="theme-switch-checkbox">
+    <label for="themeSwitch" class="theme-switch-label"></label>
+    <span class="theme-switch-text">Dark Mode</span>
+
+
+
+    
     <!-- <?php var_dump($_SESSION); ?> -->
     <!-- Pop-up Connexion -->
 <div id="connexion-popup" class="popup">
@@ -150,4 +160,5 @@
         <div id="msgInscriptionImportant" class="msgImportant"></div>
     </div>
 </div>
+<script src="./modele/theme-switcher.js"></script>
 </header>

@@ -366,3 +366,47 @@ a {
     }
 
 }
+
+
+/* Ajoutez ces styles dans votre fichier CSS existant ou créez un nouveau fichier CSS */
+.theme-switch-checkbox {
+    display: none;
+}
+
+.theme-switch-label {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: #b1d8ff; /* Couleur de fond pour le switch désactivé */
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.theme-switch-checkbox:checked + .theme-switch-label {
+    background-color: #000130; /* Couleur de fond pour le switch activé */
+}
+
+.theme-switch-label:before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #0056b3; /* Couleur du bouton du switch */
+    top: 1px;
+    left: 1px;
+    transition: 0.3s;
+}
+
+.theme-switch-checkbox:checked + .theme-switch-label:before {
+    transform: translateX(20px); /* Déplacer le bouton à droite lorsque le switch est activé */
+}
+.theme-switch-text {
+    display: inline-block;
+    margin-left: 10px; 
+    color: white; 
+    font-size: 16px; 
+    line-height: 20px; 
+    font-family: 'Helvetica Neue', sans-serif;
+}

@@ -8,20 +8,17 @@ function toggleTheme() {
     localStorage.setItem('darkTheme', isDarkTheme);
 }
 
-// Recherchez tous les liens avec la classe "a-header" et href contenant "action=switch"
-const themeSwitchLinks = document.querySelectorAll('a.a-header[href*="action=switch"]');
-
 // Récupérez l'état du thème dans le stockage local
 const isDarkThemeStored = localStorage.getItem('darkTheme');
+const themeSwitch = document.getElementById('themeSwitch');
+
 if (isDarkThemeStored === 'true') {
-    // Si le thème sombre est stocké, ajoutez la classe
+    // Si le thème sombre est stocké, activez le switch
+    themeSwitch.checked = true;
     document.body.classList.add('dark-theme');
 }
 
-// Ajoutez un gestionnaire d'événements à chaque lien
-themeSwitchLinks.forEach(link => {
-    link.addEventListener('click', (event) => {
-        event.preventDefault(); // Empêche le comportement par défaut du lien
-        toggleTheme();
-    });
+// Ajoutez un gestionnaire d'événements au switch
+themeSwitch.addEventListener('change', () => {
+    toggleTheme();
 });
