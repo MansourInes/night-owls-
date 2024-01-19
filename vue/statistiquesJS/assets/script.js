@@ -104,7 +104,7 @@ function loadDataForEvenement(idEvenement) {
                                 size: 16, // Taille de police plus grande
                                 weight: 'bold' // Mise en gras
                             },
-                            color: 'black' // Couleur en noir
+                            color: 'black' // Couleur en noir   
                         }
                     }
                 }

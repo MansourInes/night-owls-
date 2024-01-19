@@ -7,24 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./vue/accueil/assets/accueil.css">
     <title>Accueil</title>
-    <style>
-        /* Style pour le bouton "Voir les événements NightOwls" */
-        #btnAfficherEvenements {
-            padding: 10px 20px;
-            background-color: #0056b3; /* Couleur de fond bleue */
-            color: white; /* Texte blanc pour le contraste */
-            border: none; /* Pas de bordure */
-            border-radius: 5px; /* Coins arrondis */
-            cursor: pointer; /* Curseur en forme de main au survol */
-            font-weight: bold; /* Texte en gras */
-            transition: background-color 0.3s; /* Transition en douceur pour le survol */
-            margin : 20px;
-        }
-
-        #btnAfficherEvenements:hover {
-            background-color: #004080; /* Couleur de fond plus foncée au survol */
-        }
-    </style>
+    
 </head>
 <body>
    

@@ -1,5 +1,19 @@
+body{
+    background: #b1d8ff;
+}
+body.dark-theme{
+    background:#000130;
+}
 .form-container {
     background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 300px;
+}
+body.dark-theme .form-container {
+    background-color: black;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -9,6 +23,12 @@
 
 .form-container label {
     color: #0056b3;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+}
+body.dark-theme .form-container label {
+    color: #b1d8ff;
     margin-bottom: 5px;
     display: block;
     font-weight: bold;
