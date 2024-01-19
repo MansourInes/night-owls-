@@ -27,8 +27,15 @@
             echo "<a class='a-header' href='./index.php?controle=backoffice&action=backoffice'>Backoffice</a>";
         }
         ?>
+        <?php 
+        if (isset($_SESSION['id'])) {
+            echo "<a class='a-header' href='./index.php?controle=etablissement&action=afficherFormulaireAjout'>Ajouter événement</a>";
+        }
+        ?>
+        
 
         <a class="a-header" href="./index.php?controle=entreprise&action=entreprise">Entreprise</a>
+
     
     </nav>
     
@@ -44,9 +51,8 @@
             echo("<a class='a-header' id='connexion-button'>Authentification</a>");
     ?>
     
-    <!-- <a class="a-header" href="./index.php?modele=theme-switcher&action=switch">Thème</a> -->
+   
 
-    <!-- Placez ceci dans le corps de votre page HTML -->
     <input type="checkbox" id="themeSwitch" class="theme-switch-checkbox">
     <label for="themeSwitch" class="theme-switch-label"></label>
     <span class="theme-switch-text">Dark Mode</span>

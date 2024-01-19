@@ -76,5 +76,95 @@ function incrementerCompteur(): int {
     return $compteur;
 }
 
+/*Fonction pour récuperer les evenement avec API */
+define("SKIDDLE_API_KEY", "8c3ebc2e4824e41ee330d1512cb56b07"); 
+
+function getNightClubEvents() {
+    $url = "https://www.skiddle.com/api/v1/events/search/?api_key=" . SKIDDLE_API_KEY . "&eventcode=CLUB";
+
+    if (!empty($keyword)) {
+        $url .= "&keyword=" . urlencode($keyword);
+    }
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    if ($response === false) {
+        return ["error" => "Erreur lors de la requête vers l'API Skiddle."];
+    }
+
+    $data = json_decode($response, true);
+
+    if (!empty($data['results'])) {
+        return $data['results'];
+    } else {
+        return ["error" => "Aucun événement trouvé."];
+    }
+}
+
+function showNightClubEvents(): string {
+    $events = getNightClubEvents();
+
+    if (isset($events["error"])) {
+        return "<p>Error: " . $events["error"] . "</p>";
+    } else {
+        $html = "<section class='columns'>";
+
+        foreach ($events as $event) {
+            $eventName = $event['eventname'];
+            $eventDate = $event['date']; // Vérifiez et formatez la date selon vos besoins
+            $eventImage = $event['largeimageurl']; // URL de l'image
+    
+            // Mise en forme de chaque événement
+            $html .= "<div class='ligne'>";
+            $html .= "<a href='" . $event['link'] . "' target='_blank'>"; // Lien vers l'événement
+            $html .= "<img src='" . $eventImage . "' alt='" . $eventName . "' />";
+            $html .= "<p>" . $eventName . "</p>";
+            $html .= "<button class='btn-reserver'>Plus d'infos</button>";
+            $html .= "</a>";
+            $html .= "</div>";
+        }
+    
+        $html .= "</section>";
+        return $html;
+    }
+}    
+/**
+ * Effectue une recherche d'événements sur l'API Skiddle en utilisant un mot-clé.
+ *
+ * @param string $keyword Le mot-clé pour la recherche.
+ * @return array Les résultats de la recherche ou un message d'erreur.
+ */
+function rechercheEvenementsSkiddle($keyword) {
+    $url = "https://www.skiddle.com/api/v1/events/search/?api_key=" . SKIDDLE_API_KEY . "&eventcode=CLUB";
+
+    // Ajoute le mot-clé à l'URL si spécifié
+    if (!empty($keyword)) {
+        $url .= "&keyword=" . urlencode($keyword);
+    }
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+    if ($response === false) {
+        return ["error" => "Erreur lors de la requête vers l'API Skiddle."];
+    }
+
+    $data = json_decode($response, true);
+
+    if (!empty($data['results'])) {
+        return $data['results'];
+    } else {
+        return ["error" => "Aucun événement correspondant trouvé."];
+    }
+}
 
 ?>
+
+
+

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,78 +7,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./vue/accueil/assets/accueil.css">
     <title>Accueil</title>
+    <style>
+        /* Style pour le bouton "Voir les événements NightOwls" */
+        #btnAfficherEvenements {
+            padding: 10px 20px;
+            background-color: #0056b3; /* Couleur de fond bleue */
+            color: white; /* Texte blanc pour le contraste */
+            border: none; /* Pas de bordure */
+            border-radius: 5px; /* Coins arrondis */
+            cursor: pointer; /* Curseur en forme de main au survol */
+            font-weight: bold; /* Texte en gras */
+            transition: background-color 0.3s; /* Transition en douceur pour le survol */
+            margin : 20px;
+        }
+
+        #btnAfficherEvenements:hover {
+            background-color: #004080; /* Couleur de fond plus foncée au survol */
+        }
+    </style>
 </head>
 <body>
-    <section>
-        <form class="search-form" action="rechercher.php" method="get">
-            <input type="text" name="query" placeholder="Rechercher..." />
+   
+   <section>
+        <!-- Vue/accueil/accueil.tpl -->
+        <form class="search-form" action="index.php?controle=evenement&action=rechercher" method="get">
+            <input type="date" name="date" placeholder="Date" required />
             <button type="submit">Rechercher</button>
         </form>
+
+
+</section>
+
+    <section>
+        <!-- Bouton pour charger les événements NightOwls -->
+        <button id="btnAfficherEvenements">Voir les événements NightOwls</button>
+        <section id="evenementsNightOwls" class="columns" style="display:none;"></section>
     </section>
-    <div class="page-header">
-        <h1 class="page-title">Evenement à venir</h1>
-    </div>
-        <section class='columns'>
-            <div class='ligne'>
-                <a href="https://shotgun.live/fr/festivals/le-jardin-d-hiver-2024-lille">
-                    <img src="./vue/img/accueil/image1.png" alt="event1" title="événement : Jardin d'hiver " />
-                    <p>Jardin d'hiver</p>
-                    <button class="btn-reserver">Réserver</button>
-                </a>
-            </div>
-            <div class='ligne'>
-                <a href="https://shotgun.live/fr/festivals/newrave-festival-2023-lunar">
-                    <img src="./vue/img/accueil/image2.png" alt="event2" title="événement : new RAVE " />
-                    <p>New RAVE Festival</p>
-                    <button class="btn-reserver">Réserver</button>
-                </a>
-            </div>
-            <div class='ligne'>
-                <a href="https://shotgun.live/fr/festivals/holiday-house">
-                    <img src="./vue/img/accueil/image3.png" alt="event3" title="événement : holidays house " />
-                    <p>Holidays House</p>
-                    <button class="btn-reserver">Réserver</button>
-                </a>
-            </div>
-            <div class='ligne'>
-                <a href="https://shotgun.live/fr/events/la-purple-nantes-christmas-edition">
-                    <img src="./vue/img/accueil/image4.png" alt="event4" title="événement : Purgatory " />
-                    <p>Purgatory</p>
-                    <button class="btn-reserver">Réserver</button>
-                </a>
-            </div>
-        </section>
+  
+     <section>
+        <div class="page-header">
+            <h1 class="page-title">Evenement à venir</h1>
+        </div>
+    </section>
+
+    <section class='columns'>
+        <?=  showNightClubEvents(); ?>
+    </section>
     
-        <section class='columns'>
-            <div class='ligne'>
-                <a href="https://shotgun.live/fr/venues/yardland">
-                    <img src="./vue/img/accueil/image5.jpg" alt="event5" title="événement : Yardland " />
-                    <p>Yardland</p>
-                    <button class="btn-reserver">Réserver</button>
-                </a>
-            </div>
-            <div class='ligne'>
-                <a href="https://shotgun.live/fr/festivals/rock-en-seine-2024">
-                    <img src="./vue/img/accueil/image6.jpg" alt="event6" title="événement : Rock en Seine " />
-                    <p>Rock en Seine</p>
-                    <button class="btn-reserver">Réserver</button>
-                </a>
-            </div>
-            <div class='ligne'>
-                <a href="https://shotgun.live/fr/events/nomadas-neptunes-fest-special-nye">
-                    <img src="./vue/img/accueil/image7.jpg" alt="event7" title="événement : Culture" />
-                    <p>Culture</p>
-                    <button class="btn-reserver">Réserver</button>
-                </a>
-            </div>
-            <div class='ligne'>
-                <a href="https://shotgun.live/fr/festivals/illuzion-market-trap-music-bar-funchal">
-                    <img src="./vue/img/accueil/image8.jpg" alt="event8" title="événement : illusion market " />
-                    <p>Illusion Market</p>
-                    <button class="btn-reserver">Réserver</button>
-                </a>
-            </div>
-        </section>
         <div class="page-header">
             <h2 id="titre-stat" class="page-title">Statistiques Générales</h1>
         </div>
@@ -99,7 +76,18 @@
                     <img src="./vue/img/accueil/rexclublogo.jpeg" alt="logo" />
                 </a>
             </div>
-    </section>   
-    <script src="./modele/theme-switcher.js"></script> 
+    </section>  
+      <script>
+        document.getElementById('btnAfficherEvenements').addEventListener('click', function() {
+            fetch('index.php?controle=evenement&action=afficherEvenements')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('evenementsNightOwls').innerHTML = html;
+                    document.getElementById('evenementsNightOwls').style.display = 'block';
+                })
+                .catch(error => console.error('Erreur:', error));
+        });
+    </script>  
+    <script src="./modele/theme-switcher.js"></script>
 </body>
 </html>
