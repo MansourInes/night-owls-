@@ -1,6 +1,7 @@
 <?php
 require('./modele/connectSQL.php'); // Assurez-vous que ce fichier existe et qu'il contient les informations de connexion à la base de données.
 
+// Fonction pour obtenir tous les sujets depuis la base de données
 function getAllTopicsBD() {
     global $pdo;
     $sql = "SELECT sujet.*, utilisateur.prenom AS prenom, utilisateur.nom as nom,  
@@ -15,6 +16,7 @@ function getAllTopicsBD() {
     }
 }
 
+// Fonction pour obtenir des informations spécifiques sur un sujet à partir de son ID depuis la base de données
 function getInfoSpecificTopicBD($topicID) {
     global $pdo;
     $sql = "SELECT sujet.titre as titre, sujet.date_creation, utilisateur.prenom AS prenom, utilisateur.nom as nom FROM sujet INNER JOIN utilisateur ON sujet.id_utilisateur = utilisateur.id_utilisateur WHERE sujet.id_sujet = :topicID";
@@ -28,6 +30,7 @@ function getInfoSpecificTopicBD($topicID) {
     }
 }
 
+// Fonction pour obtenir tous les messages d'un sujet depuis la base de données
 function getMessagesByTopicBD($topicId) {
     global $pdo;
     $sql = "SELECT message.*, utilisateur.prenom AS prenom, utilisateur.nom as nom
@@ -43,6 +46,7 @@ function getMessagesByTopicBD($topicId) {
     }
 }
 
+// Fonction pour créer un nouveau sujet dans la base de données
 function createTopicBD($title, $userId) {
     global $pdo;
 
@@ -66,7 +70,7 @@ function createTopicBD($title, $userId) {
     }
 }
 
-
+// Fonction pour poster un message dans un sujet dans la base de données
 function postMessageBD($topicId, $userId, $content) {
     global $pdo;
 

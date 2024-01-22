@@ -1,3 +1,4 @@
+/* Styles généraux */
 body {
     background-color: #f8f8f8;
     margin: 0;
@@ -73,9 +74,7 @@ header a img.logo {
     transition: 0.4s;
 }
 
-/***************POPUP******************/
-
-
+/*************** POPUP ***************/
 
 .popup {
     visibility: hidden;
@@ -120,7 +119,6 @@ label[for="siestSuperAdmin"] {
     display: block;
 }
 
-
 #siville,
 #simotdepasse {
     margin-top: 10px;
@@ -137,7 +135,7 @@ label[for="siestSuperAdmin"] {
     color: black;
 }
 
-/******************************/
+/************************************/
 
 /* Styles additionnels pour le formulaire de connexion */
 .Titre {
@@ -151,22 +149,16 @@ label[for="siestSuperAdmin"] {
 
 .form {
     width: 400px;
-    /* Taille fixe pour contrôler la largeur du formulaire */
     text-align: center;
     padding: 40px;
-    /* Fond blanc pour le formulaire */
     border-radius: 8px;
-    /* Bords arrondis */
     margin: auto;
-    /* Centrer dans la pop-up */
     position: relative;
-    /* Pour positionnement absolu des éléments à l'intérieur */
 }
 
 /* Styles pour les champs de formulaire et les icônes */
 .labelmdp {
     position: relative;
-    /* Position relative pour l'icône de l'œil */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -178,11 +170,9 @@ input[type="email"],
 input[type="number"] {
     font-size: 1rem;
     padding: 10px 40px 10px 10px;
-    /* Padding à droite pour l'icône */
     border-radius: 20px;
     border: 2px solid #004080;
     width: 200px;
-    /* Ajuster pour la bordure */
     margin-bottom: 15px;
 }
 
@@ -214,11 +204,6 @@ input[type="number"] {
     cursor: pointer;
 }
 
-/*
-#inputmdp:hover+.password-icon #eyeoff {
-    display: block;
-    /* Afficher quand le champ de mot de passe est survolé */
-
 /* Styles pour le bouton de soumission */
 input[type="submit"] {
     background-color: #004080;
@@ -226,9 +211,7 @@ input[type="submit"] {
     border: none;
     padding: 10px 20px;
     margin-top: 20px;
-    /* Espace entre le dernier lien/élément et le bouton */
     width: 100%;
-    /* Pleine largeur */
     border-radius: 20px;
     cursor: pointer;
     text-transform: uppercase;
@@ -245,25 +228,20 @@ input[type="submit"]:hover {
 a {
     color: #004080;
     margin-top: 15px;
-    /* Espace au-dessus du lien */
     display: inline-block;
-    /* Pour permettre les marges */
 }
 
 /* Media queries pour ajuster pour les petits écrans */
 @media screen and (max-width: 900px) {
     .form {
         width: 90%;
-        /* Plus large sur petits écrans */
         padding: 20px;
-        /* Moins de padding sur petits écrans */
     }
 }
 
 @media screen and (max-width: 600px) {
     .form {
         width: 90%;
-        /* Encore plus large sur très petits écrans */
     }
 }
 
@@ -273,24 +251,18 @@ a {
     display: flex;
     align-items: center;
     width: 200px;
-    /* Définir la largeur du conteneur */
 }
 
 .input-icon input {
     width: 100%;
-    /* Utiliser 100% de la largeur du conteneur .input-icon */
     padding-right: 30px;
-    /* Ajouter de l'espace à droite pour l'icône */
 }
 
 .input-icon label {
     position: absolute;
     right: 10px;
-    /* Positionner l'icône à 10px du bord droit */
     top: 50%;
-    /* Centrer verticalement */
     transform: translateY(-50%);
-    /* Ajustement fin pour le centrage vertical */
     cursor: pointer;
 }
 
@@ -301,58 +273,44 @@ a {
 @media screen and (max-width: 600px) {
     header {
         padding: 0px;
-        /* Réduire le padding */
     }
 
     header a img.logo {
         width: 100px;
-        /* Réduire la taille du logo */
     }
 
     .a-header {
         padding: 6px 8px;
-        /* Réduire le padding des liens */
         margin-right: 5px;
-        /* Réduire la marge à droite */
         font-size: 0.8em;
-        /* Réduire la taille de la police */
     }
 
     #connexion-button,
     #deconnexion-button {
         padding: 8px 10px;
-        /* Réduire le padding des boutons */
         font-size: 0.8em;
-        /* Réduire la taille de la police */
     }
 }
 
 @media screen and (min-width: 601px) and (max-width: 900px) {
     header {
         padding: 2px;
-        /* Ajuster légèrement le padding */
     }
 
     header a img.logo {
         width: 110px;
-        /* Ajuster légèrement la taille du logo */
     }
 
     .a-header {
         padding: 7px 10px;
-        /* Ajuster le padding des liens */
         margin-right: 10px;
-        /* Ajuster la marge à droite */
         font-size: 0.8em;
-        /* Ajuster la taille de la police */
     }
 
     #connexion-button,
     #deconnexion-button {
         padding: 9px 12px;
-        /* Ajuster le padding des boutons */
         font-size: 0.8em;
-        /* Ajuster la taille de la police */
     }
 }
 
@@ -364,11 +322,9 @@ a {
     header {
         padding: 5px;
     }
-
 }
 
-
-/* Ajoutez ces styles dans votre fichier CSS existant ou créez un nouveau fichier CSS */
+/* Styles pour le switch de thème */
 .theme-switch-checkbox {
     display: none;
 }
@@ -377,14 +333,14 @@ a {
     display: inline-block;
     width: 40px;
     height: 20px;
-    background-color: #b1d8ff; /* Couleur de fond pour le switch désactivé */
+    background-color: #b1d8ff;
     border-radius: 10px;
     position: relative;
     cursor: pointer;
 }
 
-.theme-switch-checkbox:checked + .theme-switch-label {
-    background-color: #000130; /* Couleur de fond pour le switch activé */
+.theme-switch-checkbox:checked+.theme-switch-label {
+    background-color: #000130;
 }
 
 .theme-switch-label:before {
@@ -393,20 +349,21 @@ a {
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background-color: #0056b3; /* Couleur du bouton du switch */
+    background-color: #0056b3;
     top: 1px;
     left: 1px;
     transition: 0.3s;
 }
 
-.theme-switch-checkbox:checked + .theme-switch-label:before {
-    transform: translateX(20px); /* Déplacer le bouton à droite lorsque le switch est activé */
+.theme-switch-checkbox:checked+.theme-switch-label:before {
+    transform: translateX(20px);
 }
+
 .theme-switch-text {
     display: inline-block;
-    margin-left: 10px; 
-    color: white; 
-    font-size: 16px; 
-    line-height: 20px; 
+    margin-left: 10px;
+    color: white;
+    font-size: 16px;
+    line-height: 20px;
     font-family: 'Helvetica Neue', sans-serif;
 }

@@ -1,3 +1,4 @@
+/* Styles de base pour le corps de la page */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -6,15 +7,16 @@ body {
     background: #b1d8ff;
 }
 
+/* Styles pour le mode sombre du corps de la page */
 body.dark-theme {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #000130;
-    background: #000130;
     color: #fff;
 }
 
+/* Styles pour le corps de la page et l'élément HTML */
 body,
 html {
     width: 100%;
@@ -22,6 +24,7 @@ html {
     background: #b1d8ff;
 }
 
+/* Styles pour le mode sombre du corps de la page et l'élément HTML */
 body.dark-theme,
 html.dark-theme {
     width: 100%;
@@ -29,6 +32,7 @@ html.dark-theme {
     background: #000130;
 }
 
+/* Styles pour le conteneur principal */
 .container {
     max-width: 80%;
     margin: 50px auto;
@@ -38,6 +42,7 @@ html.dark-theme {
     text-align: center;
 }
 
+/* Styles pour le conteneur principal en mode sombre */
 body.dark-theme .container {
     max-width: 80%;
     margin: 50px auto;
@@ -47,6 +52,7 @@ body.dark-theme .container {
     text-align: center;
 }
 
+/* Styles pour les éléments de sélection */
 select {
     padding: 10px;
     font-size: 16px;
@@ -57,17 +63,19 @@ select:hover {
     border: 2px solid #0056b3;
 }
 
+/* Styles pour la sixième élément de la navigation */
 #header-nav .a-header:nth-child(6) {
     background-color: #0562be;
 }
 
-
+/* Styles pour l'élément de résultat de tableau */
 #resultatTableau {
     max-width: 100%;
     width: 100%;
     margin-top: 20px;
 }
 
+/* Styles pour les tableaux et leurs cellules */
 table {
     border-collapse: collapse;
     width: 100%;
@@ -84,17 +92,18 @@ table tr {
     color: black;
 }
 
+/* Styles pour les lignes de tableau en mode sombre */
 body.dark-theme table tr {
     color: white;
 }
 
-/* Ajoutez cette règle pour que la première ligne du tableau soit bleu */
+/* Styles pour la première ligne du tableau */
 table tr:first-child {
     background-color: #0056b3;
     color: #fff;
-    /* Pour changer la couleur du texte en blanc sur la première ligne */
 }
 
+/* Styles pour les boutons */
 button {
     background-color: #0056b3;
     color: #fff;
@@ -109,10 +118,12 @@ button:hover {
     background-color: #b1d8ff;
 }
 
+/* Styles pour les boutons en mode sombre au survol */
 body.dark-theme button:hover {
     background-color: #000280;
 }
 
+/* Styles pour les conteneurs de boutons de suppression */
 .delete-button-container {
     text-align: center;
     vertical-align: middle;

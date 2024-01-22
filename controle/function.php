@@ -1,5 +1,6 @@
 <?php
 
+// Fonction pour récupérer la chanson la plus populaire depuis l'API Deezer
 function getMostPopularSong() {
     // URL de l'API Deezer
     $url = "https://deezerdevs-deezer.p.rapidapi.com/playlist/3155776842"; // Exemple de playlist, vous pouvez ajuster l'URL selon vos besoins
@@ -50,6 +51,8 @@ function getMostPopularSong() {
         return ["error" => "Aucune piste trouvée dans la playlist."];
     }
 }
+
+// Fonction pour afficher la couverture de la chanson la plus populaire
 function getMostPopularSongCover(): string {
     $result = getMostPopularSong();
 
@@ -63,10 +66,11 @@ function getMostPopularSongCover(): string {
         return $html;
     }
 }
+
 /**
- * Increments a counter stored in a text file and returns the updated value.
+ * Incremente un compteur stocké dans un fichier texte et renvoie la valeur mise à jour.
  *
- * @return int The updated value of the counter.
+ * @return int La valeur mise à jour du compteur.
  */
 function incrementerCompteur(): int {
     $fichier = "compteur.txt";
@@ -76,7 +80,7 @@ function incrementerCompteur(): int {
     return $compteur;
 }
 
-/*Fonction pour récuperer les evenement avec API */
+/* Fonction pour récupérer les événements de nightclub avec API Skiddle */
 define("SKIDDLE_API_KEY", "8c3ebc2e4824e41ee330d1512cb56b07"); 
 
 function getNightClubEvents() {
@@ -104,6 +108,7 @@ function getNightClubEvents() {
     }
 }
 
+// Fonction pour afficher les événements de nightclub récupérés depuis l'API Skiddle
 function showNightClubEvents(): string {
     $events = getNightClubEvents();
 
@@ -130,7 +135,8 @@ function showNightClubEvents(): string {
         $html .= "</section>";
         return $html;
     }
-}    
+}
+
 /**
  * Effectue une recherche d'événements sur l'API Skiddle en utilisant un mot-clé.
  *
@@ -165,6 +171,3 @@ function rechercheEvenementsSkiddle($keyword) {
 }
 
 ?>
-
-
-

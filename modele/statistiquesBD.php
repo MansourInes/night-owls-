@@ -2,6 +2,7 @@
 // Connexion à la base de données
 require('./modele/connectSQL.php');
 
+// Fonction pour obtenir les données d'un événement à partir de son ID
 function getEventData($eventId) {
     global $pdo;
     $sql = "SELECT * FROM capteur_data WHERE id_capteur = (SELECT id_capteur FROM capteur WHERE id_evenement = :eventId)";
@@ -15,6 +16,7 @@ function getEventData($eventId) {
     }
 }
 
+// Fonction pour obtenir tous les établissements depuis la base de données
 function getAllEtablissements() {
     global $pdo;
     $sql = "SELECT * FROM etablissement";
@@ -27,6 +29,7 @@ function getAllEtablissements() {
     }
 }
 
+// Fonction pour obtenir tous les événements d'un établissement à partir de son ID
 function getEvenementsByEtablissement($idEtablissement) {
     global $pdo;
     $sql = "SELECT * FROM evenement WHERE id_etablissement = :idEtablissement";
@@ -40,7 +43,4 @@ function getEvenementsByEtablissement($idEtablissement) {
         return [];
     }
 }
-
-
-
 ?>

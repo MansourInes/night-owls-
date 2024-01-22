@@ -14,11 +14,15 @@
             <label for="capacite_max">Capacité Max:</label>
             <input type="number" id="capacite_max" name="capacite_max" required>
 
+            <!-- Champ pour afficher le nom de l'établissement -->
+            <label for="nom_etablissement">Nom de l'établissement:</label>
+            <input type="text" id="nom_etablissement" name="nom_etablissement" required>
+
             <input type="submit" value="Ajouter l'établissement">
         </form>
     </div>
 
-    <div class="form-container" id="formulaireEvenement">
+    <div class="form-container" id="formulaireEvenement" style="display: none;">
         <!-- Formulaire d'ajout d'événement -->
         <form id="formAjoutEvenement" method="post">
             <label for="nom_evenement">Nom de l'événement:</label>
@@ -35,48 +39,48 @@
         </form>
     </div>
 
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('formAjoutEtablissement').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var formData = new FormData(this);
-            fetch('index.php?controle=etablissement&action=ajouterEtablissement', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                alert(data.message);
-                if (data.id_etablissement) {
-                    document.getElementById('idEtablissement').value = data.id_etablissement;
-                    document.getElementById('formulaireEvenement').style.display = 'block';
-                }
-            })
-            .catch(error => {
-                console.error('Erreur:', error);
+            document.getElementById('formAjoutEtablissement').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var formData = new FormData(this);
+                fetch('index.php?controle=etablissement&action=ajouterEtablissement', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    if (data.id_etablissement) {
+                        document.getElementById('idEtablissement').value = data.id_etablissement;
+                        document.getElementById('formulaireEvenement').style.display = 'block';
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur:', error);
+                });
+            });
+
+            document.getElementById('formAjoutEvenement').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var formData = new FormData(this);
+                fetch('index.php?controle=etablissement&action=ajouterEvenement', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(data.message);
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur:', error);
+                });
             });
         });
-        document.getElementById('formAjoutEvenement').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var formData = new FormData(this);
-            fetch('index.php?controle=etablissement&action=ajouterEvenement', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert(data.message);
-                } else {
-                    alert(data.message);
-                }
-            })
-            .catch(error => {
-                console.error('Erreur:', error);
-            });
-        });
-    });
     </script>
 </body>
 </html>

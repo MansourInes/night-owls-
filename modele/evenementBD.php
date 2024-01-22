@@ -28,6 +28,8 @@ class EvenementModel {
             return 'erreur: ' . $e->getMessage();
         }
     }
+
+    // Méthode pour calculer la capacité totale des événements pour un établissement donné et une date donnée
     public function capaciteTotaleEvenements($id_etablissement, $date_evenement) {
         global $pdo;
         try {
@@ -41,6 +43,8 @@ class EvenementModel {
             return 'erreur: ' . $e->getMessage();
         }
     }
+
+    // Méthode pour récupérer tous les événements (nom et date)
     public function recupererEvenements() {
         global $pdo;
         $sql = "SELECT nom, date_evenement FROM evenement";
@@ -48,13 +52,11 @@ class EvenementModel {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    // Constructeur de la classe EvenementModel
     public function __construct($date = '') {
         $this->date = $date;
     }
 
-    
-    
-    
-    
 }
 ?>

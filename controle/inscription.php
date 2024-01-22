@@ -1,12 +1,16 @@
 <?php
+
+// Fonction d'inscription
 function inscription() {
     $_SESSION['msgAcc'] = "";
 
+    // Vérifie si des données POST ont été envoyées
     if (count($_POST) == 0) {
         require("./vue/inscription/inscription.tpl");
     } else {
         header('Content-Type: application/json'); // Définit le type de contenu de la réponse une seule fois
 
+        // Récupère les données POST
         $login = isset($_POST['silogin']) ? $_POST['silogin'] : '';
         $email = isset($_POST['siemail']) ? $_POST['siemail'] : '';
         $nom = isset($_POST['sinom']) ? $_POST['sinom'] : '';
@@ -19,23 +23,35 @@ function inscription() {
         $mdp = isset($_POST['simotdepasse']) ? $_POST['simotdepasse'] : '';
         $mdp_hashed = password_hash($mdp, PASSWORD_BCRYPT);
 
+        // Vérifie si l'identifiant existe déjà dans la base de données
         if (identExists($email)) {
-            echo json_encode(["success" => false, "message" => "Le mail existe déjà, connectez vous."]);
+            echo json_encode(["success" => false, "message" => "Le mail existe déjà, connectez-vous."]);
         } else {
-            //envoyerEmail($email); nécessite configuration d'un serveur smtp (configuré sur l'ordi de Gabriel)
+            // Vous pouvez appeler la fonction d'envoi d'email ici, assurez-vous que la configuration SMTP est correcte
+            // envoyerEmail($email);
+
+            // Appelle la fonction pour enregistrer l'utilisateur
             signIn($login, $email, $nom, $prenom, $age, $sexe, $ville, $estAdmin, $estSuperAdmin, $mdp_hashed);
+
+            // Vérifie l'identité de l'utilisateur nouvellement inscrit
             verif_ident($email, $mdp);
+
+            // Stocke le login dans la session
             $_SESSION['login'] = $login;
+
+            // Renvoie une réponse JSON en cas de succès
             echo json_encode(["success" => true, "redirect" => "./index.php?controle=accueil&action=accueil"]);
         }
     }
 }
 
+// Fonction pour vérifier si l'identifiant existe déjà
 function identExists($email) {
     require('./modele/utilisateurBD.php');
     return verifEmail($email);
 }
 
+// Fonction pour envoyer un email de bienvenue (à configurer correctement)
 function envoyerEmail($to) {
     // Pour envoyer un mail HTML, l'en-tête Content-type doit être défini
     $headers = "MIME-Version: 1.0" . "\r\n";
@@ -45,6 +61,7 @@ function envoyerEmail($to) {
     $headers .= 'From: <night.owls.isep@gmail.com>' . "\r\n";
 
     $subject = "Bienvenue sur Night Owls";
+
     // Contenu de l'email
     $message = "
     <html>
@@ -63,4 +80,5 @@ function envoyerEmail($to) {
 
     mail($to, $subject, $message, $headers);
 }
+
 ?>
