@@ -1,12 +1,15 @@
-body{
+body {
     background: #b1d8ff;
 }
-body.dark-theme{
-    background:#000130;
+
+body.dark-theme {
+    background: #000130;
 }
-#header-nav .a-header:nth-child(6) {
+
+#header-nav .a-header:nth-child(5) {
     background-color: #0562be;
 }
+
 .form-container {
     background-color: white;
     padding: 20px;
@@ -15,6 +18,7 @@ body.dark-theme{
     margin: 20px auto;
     width: 300px;
 }
+
 body.dark-theme .form-container {
     background-color: rgb(0, 0, 0);
     padding: 20px;
@@ -30,12 +34,14 @@ body.dark-theme .form-container {
     display: block;
     font-weight: bold;
 }
+
 body.dark-theme .form-container label {
     color: #b1d8ff;
     margin-bottom: 5px;
     display: block;
     font-weight: bold;
 }
+
 .form-container input[type="text"],
 .form-container input[type="number"],
 .form-container input[type="date"],
@@ -57,7 +63,8 @@ body.dark-theme .form-container label {
 .form-container input[type="submit"]:hover {
     background-color: #004a9f;
 }
-  /* Style pour masquer le formulaire d'événement initialement */
-  #formulaireEvenement {
+
+/* Style pour masquer le formulaire d'événement initialement */
+#formulaireEvenement {
     display: none;
 }

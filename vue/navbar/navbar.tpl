@@ -21,15 +21,18 @@
         }
         ?>
     
+        
+        <?php 
+            if ((isset($_SESSION['estSuperAdmin']) && $_SESSION['estSuperAdmin']) || 
+                (isset($_SESSION['estAdmin']) && $_SESSION['estAdmin'])) {
+                echo "<a class='a-header' href='./index.php?controle=etablissement&action=afficherFormulaireAjout'>Ajouter événement</a>";
+            }
+        ?>
+
         <!-- Ce lien est accessible uniquement pour les super administrateurs -->
         <?php 
         if (isset($_SESSION['estSuperAdmin']) && $_SESSION['estSuperAdmin'] == 1) {
             echo "<a class='a-header' href='./index.php?controle=backoffice&action=backoffice'>Backoffice</a>";
-        }
-        ?>
-        <?php 
-        if (isset($_SESSION['id'])) {
-            echo "<a class='a-header' href='./index.php?controle=etablissement&action=afficherFormulaireAjout'>Ajouter événement</a>";
         }
         ?>
         
