@@ -4,6 +4,9 @@ body{
 body.dark-theme{
     background:#000130;
 }
+#header-nav .a-header:nth-child(6) {
+    background-color: #0562be;
+}
 .form-container {
     background-color: white;
     padding: 20px;
@@ -13,7 +16,7 @@ body.dark-theme{
     width: 300px;
 }
 body.dark-theme .form-container {
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

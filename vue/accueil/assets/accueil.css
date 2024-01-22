@@ -5,7 +5,7 @@ body {
     background: #b1d8ff;
 }
 body.dark-theme {
-    background-color: #000000;
+    background-color: #000130;
     margin: 0;
     font-family: 'Helvetica Neue', sans-serif;
     background: #000130;
@@ -67,33 +67,44 @@ main {
     background-color: #001f3f;
 }
 
-/* Style pour le calendrier */
-.calendar {
-    position: absolute;
-    top: 150px;
-    right: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    display: grid;
-    grid-template-columns: repeat(7, calc((200px - 6 * 5px) / 7));
-    gap: 5px;
-    width: 200px;
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-.calendar-day {
-    width: calc((200px - 6 * 5px) / 7);
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    border-radius: 5px;
-    cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
 }
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 
 /* CSS des colonnes et des lignes */
 .columns {
@@ -116,8 +127,12 @@ main {
 }
 body.dark-theme .ligne:hover {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.690);
+    
 }
-
+body.dark-theme .ligne{
+    background-color: #0c2e50;
+    border-radius: 5px;
+}
 .ligne img {
     width: 100%;
     height: auto;
@@ -132,9 +147,11 @@ body.dark-theme .ligne:hover {
 }
 body.dark-theme .ligne p {
     text-align: center;
+    background-color: #0c2e50;
     margin-top: 5px;
     color: white;
     font-size: large;
+    
 }
 
 .ligne a {
@@ -171,6 +188,7 @@ body.dark-theme .statistic-container {
     flex: 1;
     /* Chaque conteneur prend autant d'espace que possible */
     color:#fff;
+    
 }
 
 /* Style pour le titre "Le Song le Plus Populaire" et "Nombre de visites du site" */
@@ -322,4 +340,5 @@ body.dark-theme .visits-info {
 }
 body.dark-theme #evenementsNightOwls{
     color:white;
+
 }

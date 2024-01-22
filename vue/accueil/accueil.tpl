@@ -10,16 +10,6 @@
     
 </head>
 <body>
-   
-   <section>
-        <!-- Vue/accueil/accueil.tpl -->
-        <form class="search-form" action="index.php?controle=evenement&action=rechercher" method="get">
-            <input type="date" name="date" placeholder="Date" required />
-            <button type="submit">Rechercher</button>
-        </form>
-
-
-</section>
 
     <section>
         <!-- Bouton pour charger les événements NightOwls -->

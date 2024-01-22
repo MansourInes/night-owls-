@@ -264,6 +264,7 @@ body.dark-theme #graph-container p {
 
 .graph-block {
     border: 1px solid #000;
+    background-color: rgb(186, 197, 230);
     /* Bordure noire de 1px */
     padding: 10px;
     /* Espace à l'intérieur de la bordure */
@@ -278,12 +279,14 @@ body.dark-theme .graph-block {
     border: 1px solid #0562be;
     /* Bordure noire de 1px */
     padding: 10px;
+    
     /* Espace à l'intérieur de la bordure */
     margin-bottom: 20px;
     /* Espace au-dessous de chaque graphique et conclusion */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     /* Ombre légère pour un effet en relief */
     color: white;
+    background-color: rgb(179, 204, 245);
 }
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
