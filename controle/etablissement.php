@@ -32,7 +32,7 @@ function ajouterEtablissement() {
 
     if ($resultat === 'existe') {
         // Si l'établissement existe déjà, récupérez son ID et renvoyez un message
-        $idEtablissementExistant = $model->getIdEtablissementParAdresse($adresse);
+        $idEtablissementExistant = $model->getIdEtablissementParAdresse($nom_etablissement);
         echo json_encode(['success' => true, 'message' => 'L\'établissement existe déjà.', 'id_etablissement' => $idEtablissementExistant]);
     } elseif ($resultat) {
         // Si l'ajout de l'établissement est réussi, renvoyez un message de succès

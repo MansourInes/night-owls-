@@ -36,11 +36,11 @@ public function ajouterEtablissement($capacite_max, $nom, $adresse) {
 
 
     // Méthode pour obtenir l'ID de l'établissement par son adresse
-    public function getIdEtablissementParAdresse($adresse) {
+    public function getIdEtablissementParAdresse($nom) {
         global $pdo;
-        $sql = "SELECT id_etablissement FROM etablissement WHERE adresse = :adresse";
+        $sql = "SELECT id_etablissement FROM etablissement WHERE nom = :nom";
         $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':adresse', $adresse, PDO::PARAM_STR);
+        $stmt->bindParam(':nom', $nom, PDO::PARAM_STR);
         $stmt->execute();
         return $stmt->fetchColumn();
     }
